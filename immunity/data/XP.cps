@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.45 (Build 298) (http://www.copasi.org) at 2025-12-30T15:00:48Z -->
+<!-- generated with COPASI 4.46 (Build 300) (http://www.copasi.org) at 2026-06-10T14:56:24Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
-<COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="45" versionDevel="298" copasiSourcesModified="0">
+<COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="46" versionDevel="300" copasiSourcesModified="0">
   <ListOfFunctions>
     <Function key="Function_6" name="Constant flux (irreversible)" type="PreDefined" reversible="false">
       <MiriamAnnotation>
@@ -175,7 +175,9 @@ import y export no dependen de pH como antes
     <ListOfCompartments>
       <Compartment key="Compartment_0" name="soluble" simulationType="fixed" dimensionality="3" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Compartment_0">
     <dcterms:created>
       <rdf:Description>
@@ -184,11 +186,14 @@ import y export no dependen de pH como antes
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
       </Compartment>
       <Compartment key="Compartment_1" name="membrane" simulationType="fixed" dimensionality="3" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Compartment_1">
     <dcterms:created>
       <rdf:Description>
@@ -197,11 +202,14 @@ import y export no dependen de pH como antes
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
       </Compartment>
       <Compartment key="Compartment_2" name="imaginario" simulationType="fixed" dimensionality="3" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Compartment_2">
     <dcterms:created>
       <rdf:Description>
@@ -210,13 +218,16 @@ import y export no dependen de pH como antes
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
       </Compartment>
     </ListOfCompartments>
     <ListOfMetabolites>
       <Metabolite key="Metabolite_0" name="ovaEn" simulationType="reactions" compartment="Compartment_1" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Metabolite_0">
     <dcterms:created>
       <rdf:Description>
@@ -225,6 +236,7 @@ import y export no dependen de pH como antes
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
       </Metabolite>
       <Metabolite key="Metabolite_1" name="exCxEn" simulationType="reactions" compartment="Compartment_1" addNoise="false">
@@ -320,7 +332,9 @@ import y export no dependen de pH como antes
       </Metabolite>
       <Metabolite key="Metabolite_8" name="cMHCIEn" simulationType="reactions" compartment="Compartment_1" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Metabolite_8">
     <dcterms:created>
       <rdf:Description>
@@ -329,6 +343,7 @@ import y export no dependen de pH como antes
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
       </Metabolite>
       <Metabolite key="Metabolite_9" name="pepCy" simulationType="reactions" compartment="Compartment_0" addNoise="false">
@@ -432,6 +447,16 @@ import y export no dependen de pH como antes
       </rdf:Description>
     </dcterms:created>
   </rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
+      </Metabolite>
+      <Metabolite key="Metabolite_17" name="povaEn" simulationType="reactions" compartment="Compartment_0" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#Metabolite_17">
+</rdf:Description>
 </rdf:RDF>
         </MiriamAnnotation>
       </Metabolite>
@@ -552,9 +577,7 @@ import y export no dependen de pH como antes
       </ModelValue>
       <ModelValue key="ModelValue_8" name="kMHCIloating" simulationType="assignment" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_8">
 </rdf:Description>
 </rdf:RDF>
@@ -565,9 +588,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       </ModelValue>
       <ModelValue key="ModelValue_9" name="kMHCipepOpening" simulationType="assignment" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_9">
 </rdf:Description>
 </rdf:RDF>
@@ -577,15 +598,21 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         </Expression>
       </ModelValue>
       <ModelValue key="ModelValue_10" name="kOvaOut" simulationType="assignment" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#ModelValue_10">
+</rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
         <Expression>
           &lt;CN=Root,Model=AntigenPresentation,Vector=Compartments[membrane],Reference=InitialVolume>*1E6*1E-2/3e4
         </Expression>
       </ModelValue>
       <ModelValue key="ModelValue_11" name="kpepImp" simulationType="assignment" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_11">
 </rdf:Description>
 </rdf:RDF>
@@ -596,9 +623,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       </ModelValue>
       <ModelValue key="ModelValue_12" name="kFreeTf" simulationType="assignment" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_12">
 </rdf:Description>
 </rdf:RDF>
@@ -608,6 +633,14 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         </Expression>
       </ModelValue>
       <ModelValue key="ModelValue_13" name="kOvaDig" simulationType="assignment" addNoise="false">
+        <MiriamAnnotation>
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#ModelValue_13">
+</rdf:Description>
+</rdf:RDF>
+        </MiriamAnnotation>
         <Expression>
           &lt;CN=Root,Model=AntigenPresentation,Vector=Compartments[imaginario],Vector=Metabolites[RabD],Reference=InitialConcentration>
         </Expression>
@@ -616,9 +649,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <ListOfReactions>
       <Reaction key="Reaction_0" name="OVAout" reversible="false" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF
-   xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_0">
     <dcterms:created>
       <rdf:Description>
@@ -627,7 +658,6 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
-
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
@@ -1081,14 +1111,6 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_12" name="OvaDigestion" reversible="false" fast="false" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Reaction_12">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -1105,6 +1127,30 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
+      </Reaction>
+      <Reaction key="Reaction_13" name="OVAavailable" reversible="false" fast="false" addNoise="false">
+        <ListOfSubstrates>
+          <Substrate metabolite="Metabolite_17" stoichiometry="1"/>
+        </ListOfSubstrates>
+        <ListOfProducts>
+          <Product metabolite="Metabolite_0" stoichiometry="1"/>
+        </ListOfProducts>
+        <ListOfConstants>
+          <Constant key="Parameter_32" name="k1" value="0.01"/>
+        </ListOfConstants>
+        <KineticLaw function="Function_13" unitType="ConcentrationPerTime" scalingCompartment="CN=Root,Model=AntigenPresentation,Vector=Compartments[soluble]">
+          <ListOfCallParameters>
+            <CallParameter functionParameter="FunctionParameter_80">
+              <SourceParameter reference="Parameter_32"/>
+            </CallParameter>
+            <CallParameter functionParameter="FunctionParameter_81">
+              <SourceParameter reference="Metabolite_17"/>
+            </CallParameter>
+          </ListOfCallParameters>
+        </KineticLaw>
+        <NoiseExpression>
+          sqrt(abs(&lt;CN=Root,Model=AntigenPresentation,Vector=Reactions[OVAavailable],Reference=ParticleFlux>))
+        </NoiseExpression>
       </Reaction>
     </ListOfReactions>
     <ListOfModelParameterSets activeSet="ModelParameterSet_1">
@@ -1143,6 +1189,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameter cn="CN=Root,Model=AntigenPresentation,Vector=Compartments[membrane],Vector=Metabolites[REn]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=AntigenPresentation,Vector=Compartments[soluble],Vector=Metabolites[TfaEn]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=AntigenPresentation,Vector=Compartments[membrane],Vector=Metabolites[R-TfEn]" value="1445314029600" type="Species" simulationType="reactions"/>
+          <ModelParameter cn="CN=Root,Model=AntigenPresentation,Vector=Compartments[soluble],Vector=Metabolites[povaEn]" value="2890628059200000" type="Species" simulationType="reactions"/>
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Initial Global Quantities" type="Group">
           <ModelParameter cn="CN=Root,Model=AntigenPresentation,Vector=Values[pH]" value="7" type="ModelValue" simulationType="assignment"/>
@@ -1306,6 +1353,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                 &lt;CN=Root,Model=AntigenPresentation,Vector=Values[kOvaDig],Reference=InitialValue>
               </InitialExpression>
             </ModelParameter>
+          </ModelParameterGroup>
+          <ModelParameterGroup cn="CN=Root,Model=AntigenPresentation,Vector=Reactions[OVAavailable]" type="Reaction">
+            <ModelParameter cn="CN=Root,Model=AntigenPresentation,Vector=Reactions[OVAavailable],ParameterGroup=Parameters,Parameter=k1" value="0.01" type="ReactionParameter" simulationType="fixed"/>
           </ModelParameterGroup>
         </ModelParameterGroup>
       </ModelParameterSet>
@@ -1826,12 +1876,13 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="Model_1"/>
       <StateTemplateVariable objectReference="Metabolite_4"/>
       <StateTemplateVariable objectReference="Metabolite_6"/>
-      <StateTemplateVariable objectReference="Metabolite_9"/>
       <StateTemplateVariable objectReference="Metabolite_0"/>
+      <StateTemplateVariable objectReference="Metabolite_9"/>
       <StateTemplateVariable objectReference="Metabolite_13"/>
       <StateTemplateVariable objectReference="Metabolite_3"/>
       <StateTemplateVariable objectReference="Metabolite_2"/>
       <StateTemplateVariable objectReference="Metabolite_7"/>
+      <StateTemplateVariable objectReference="Metabolite_17"/>
       <StateTemplateVariable objectReference="Metabolite_15"/>
       <StateTemplateVariable objectReference="Metabolite_8"/>
       <StateTemplateVariable objectReference="Metabolite_16"/>
@@ -1860,7 +1911,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="ModelValue_7"/>
     </StateTemplate>
     <InitialState type="initialState">
-      0 0 289062805919.99988 0 1445314029600000 0 0 0 0 0 14453140296000 1445314029600 0 0 7 0.00011376 0 480000000 480000 800000 8000000 8000000 0.14219999999999999 0 1445314029600 85634.856253799997 0 4800000000 2400000 1 0.00020000000000000001 6.4000000000000004 5.4000000000000004 6.5 -9.1999999999999993 
+      0 0 289062805919.99988 1445314029600000 0 0 0 0 0 2890628059200000 0 14453140296000 1445314029600 0 0 7 0.00011376 0 480000000 480000 800000 8000000 8000000 0.14219999999999999 0 1445314029600 85634.856253799997 0 4800000000 2400000 1 0.00020000000000000001 6.4000000000000004 5.4000000000000004 6.5 -9.1999999999999993 
     </InitialState>
   </Model>
   <ListOfTasks>
@@ -1945,11 +1996,12 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         <Parameter name="Maximize" type="bool" value="0"/>
         <Parameter name="Randomize Start Values" type="bool" value="0"/>
         <Parameter name="Calculate Statistics" type="bool" value="1"/>
+        <Parameter name="Create Parameter Sets" type="bool" value="0"/>
         <ParameterGroup name="OptimizationItemList">
         </ParameterGroup>
         <ParameterGroup name="OptimizationConstraintList">
         </ParameterGroup>
-        <Parameter name="DisplayPoplations" type="bool" value="0"/>
+        <Parameter name="DisplayPopulations" type="bool" value="0"/>
       </Problem>
       <Method name="Random Search" type="RandomSearch">
         <Parameter name="Log Verbosity" type="unsignedInteger" value="0"/>
@@ -1964,14 +2016,14 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         <Parameter name="Maximize" type="bool" value="0"/>
         <Parameter name="Randomize Start Values" type="bool" value="0"/>
         <Parameter name="Calculate Statistics" type="bool" value="1"/>
+        <Parameter name="Create Parameter Sets" type="bool" value="0"/>
         <ParameterGroup name="OptimizationItemList">
         </ParameterGroup>
         <ParameterGroup name="OptimizationConstraintList">
         </ParameterGroup>
-        <Parameter name="DisplayPoplations" type="bool" value="0"/>
+        <Parameter name="DisplayPopulations" type="bool" value="0"/>
         <Parameter name="Steady-State" type="cn" value="CN=Root,Vector=TaskList[Steady-State]"/>
         <Parameter name="Time-Course" type="cn" value="CN=Root,Vector=TaskList[Time-Course]"/>
-        <Parameter name="Create Parameter Sets" type="bool" value="0"/>
         <Parameter name="Use Time Sens" type="bool" value="0"/>
         <Parameter name="Time-Sens" type="cn" value=""/>
         <ParameterGroup name="Experiment Set">
