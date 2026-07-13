@@ -1,9 +1,9 @@
-model.archive = C:/Users/lmayo/gitlocal/endomembraneSystem/immunity/output/complete_model.jar
+model.archive = C:/Users/sofid/OneDrive/Documentos/endomembraneSystem/immunity/output/complete_model.jar
 batch.params.file = scenario.rs/batch_params.xml
-ssh.key_dir = C:/Users/lmayo/.ssh
+ssh.key_dir = C:/Users/sofid/.ssh
 poll.frequency = 60.0
-model.output = C:/Users/lmayo/gitlocal/endomembraneSystem/immunity/output
+model.output = C:/Users/sofid/OneDrive/Documentos/endomembraneSystem/immunity/output
 
-vm.arguments = -Xss10M -Xmx600M -Djava.library.path=C:\Users\lmayo\gitlocal\endomembraneSystem\immunity/lib -Dfile.encoding=windows-1252 -Dstdout.encoding=windows-1252 -Dstderr.encoding=windows-1252
-local.0.instances = 4
-local.0.working_directory = C:/Users/lmayo/AppData/Local/Temp/
+vm.arguments = 
+local.0.instances = 2
+local.0.working_directory = C:/Users/sofid/AppData/Local/Temp/
