@@ -1,7 +1,7 @@
 tick 30001.0,,,,,,,,,,,,,,,,,,,,,
-endosome0e,initOrgProp,area,4500000,volume,4785615.646,xcoor,0.696510488,ycoor,19.10380032,,,,,,,,,,,,
-endosome0e,initRabContent,RabA,4500000,RabD,104619.3402,RabA,1963.973727,RabB,35423.79929,,,,,,,,,,,,
-endosome0e,initMembraneContent,povaEn,0,exCxEn,0.00313209,R-TfaEn,1.77E-36,oMHCIEn,3.697178867,membraneMarker,0,cMHCIEn,1.56E-05,pepMHCIEn,0,REn,0.127755506,imCxEn,0.00313209,bead1,1
+endosome0e,initOrgProp,area,142071.323,volume,4785615.646,xcoor,0.696510488,ycoor,19.10380032,,,,,,,,,,,,
+endosome0e,initRabContent,RabC,64.20973253,RabD,104619.3402,RabA,1963.973727,RabB,35423.79929,,,,,,,,,,,,
+endosome0e,initMembraneContent,ovaEn,0,exCxEn,0.00313209,R-TfaEn,1.77E-36,oMHCIEn,3.697178867,membraneMarker,0,cMHCIEn,1.56E-05,pepMHCIEn,0,REn,0.127755506,imCxEn,0.00313209,,
 endosome0e,initSolubleContent,protonEn,130008.906,TfaEn,0.005710005,solubleMarker,0,mvb,38,pepEn,0,,,,,,,,,,
 endosome1w,initOrgProp,area,13462.4987,volume,110492.6756,xcoor,24.98232959,ycoor,5.104590211,,,,,,,,,,,,
 endosome1w,initRabContent,RabA,6565.323775,RabB,6621.287933,RabC,275.8869972,,,,,,,,,,,,,,
