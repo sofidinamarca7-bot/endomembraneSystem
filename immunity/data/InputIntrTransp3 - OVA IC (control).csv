@@ -10,7 +10,7 @@ membraneCell,,,,,,,,,,,,,,,,,,,,
 cellCopasi,null,,,,,,,,,,,,,,,,,,,
 PLASMA MEMBRANE,,,,,,,,,,,,,,,,,,,,
 plasmaMembraneProperties,plasmaMembraneArea,2400000,plasmaMembraneVolume,4800000000,,,,,,,,,,,,,,,,
-initPMmembraneRecycle,R-TfEn,1.00E-02,ovaEn,4.80E+06,,,,,,,,,,,,,,,,
+initPMmembraneRecycle,R-TfEn,1.00E-02,,,,,,,,,,,,,,,,,,
 initPMsolubleRecycle,TfaEn,1.00E-05,,,,,,,,,,,,,,,,,,
 uptakeRate,membraneMarker,0,cMHCIEn,0.4,oMHCIEn,1.2,exCxEn,0,imCxEn,0,pepMHCIEn,0.4,R-TfEn,8,REn,8,R-TfaEn,8,ovaEn,0.1
 plasmaMembraneCopasi,.//data//XP-PM.cp,,,,,,,,,,,,,,,,,,,
