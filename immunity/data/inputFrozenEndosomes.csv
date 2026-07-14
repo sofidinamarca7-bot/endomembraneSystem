@@ -3240,7 +3240,7 @@ endosome809D,initRabContent,RabA,12566.37061,,,,,,,,,,,,,,,,,,
 endosome809D,initMembraneContent,ovaEn,0,exCxEn,1.23E-05,R-TfaEn,9.15E-41,oMHCIEn,6.48E-05,membraneMarker,0,cMHCIEn,0.001142303,pepMHCIEn,0,REn,1.98E-05,imCxEn,1.23E-05,,
 endosome809D,initSolubleContent,protonEn,80.48519104,TfaEn,9.37E-06,solubleMarker,0,mvb,0,pepEn,0,,,,,,,,,,
 plasmaMembrane,initOrgProp,area,9886738.926,volume,4.80E+09,,,,,,,,,,,,,,,,
-plasmaMembrane,initMembraneContent,exCxEn,343.5521813,R-TfaEn,4.68E-36,oMHCIEn,45.18721834,membraneMarker,0,R-TfEn,2.08E-35,cMHCIEn,1604.567237,pepMHCIEn,0,REn,0.663109025,imCxEn,343.5521813,ovaEn,4.80E+06
+plasmaMembrane,initMembraneContent,ovaEn,4.80E+06,exCxEn,343.5521813,R-TfaEn,4.68E-36,oMHCIEn,45.18721834,membraneMarker,0,R-TfEn,2.08E-35,cMHCIEn,1604.567237,pepMHCIEn,0,REn,0.663109025,imCxEn,343.5521813
 plasmaMembrane,initSolubleContent,protonEn,74030.7771,TfaEn,0.059896502,solubleMarker,0,mvb,1.958056887,pepEn,0,,,,,,,,,,
 EReticulum,initOrgProp,area,9849152.252,volume,4.80E+09,,,,,,,,,,,,,,,,
 EReticulum,initMembraneContent,,,,,,,,,,,,,,,,,,,,
