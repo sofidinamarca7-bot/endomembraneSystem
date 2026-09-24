@@ -31,7 +31,7 @@ public class EndosomeTetherStep {
 		int gridSize = (int) Math.round(endosome.size*Cell.orgScale / 15d);
 		GridCellNgh<Endosome> nghCreator = new GridCellNgh<Endosome>(grid, pt,
 				Endosome.class, gridSize, gridSize);
-		// System.out.println("SIZE           "+gridSize);
+		// //System.out.println("SIZE           "+gridSize);
 
 		List<GridCell<Endosome>> cellList = nghCreator.getNeighborhood(true);
 		if (cellList.size()<2)return;//if only one return
@@ -50,7 +50,7 @@ public class EndosomeTetherStep {
 		// select the largest endosome
 		Endosome largest = endosome;
 		for (Endosome end : endosomesToTether) {
-//			System.out.println(endosome.size+" "+end.size);
+//			//System.out.println(endosome.size+" "+end.size);
 			if (end.size > largest.size) {
 				largest = end;
 			}

@@ -136,7 +136,7 @@ public class Endosome {
 		this.pH = this.getpH();
 		area = initOrgProp.get("area");// 4d * Math.PI * 30d * 30d; // initial
 										// value, but should change
-//		System.out.println("area" + area + " "+initOrgProp);
+//		//System.out.println("area" + area + " "+initOrgProp);
 		volume = initOrgProp.get("volume");// 4d / 3d * Math.PI * 30d * 30d *
 											// 30d; // initial value, but
 		size = Math.pow(volume * 3d / 4d / Math.PI, (1d / 3d));
@@ -181,7 +181,7 @@ public class Endosome {
 
 	@ScheduledMethod(start = 1, interval = 1000)
 	public void printRabTropism() {
-//		System.out.println(" RAB TROPISMS " + cellProperties.getInstance().getRabTropism());
+//		//System.out.println(" RAB TROPISMS " + cellProperties.getInstance().getRabTropism());
 	}
 
 	
@@ -200,7 +200,7 @@ public class Endosome {
 //		Uptake and new organelles is a procedure of Cell and is not performed by endosomes		
 //		if (Math.random()<p_EndosomeUptakeStep)EndosomeUptakeStep.uptake(this);
 //		if (Math.random()<p_EndosomeNewFromERStep)EndosomeNewFromERStep.newFromEr(this);
-//		System.out.println("actionProbabilities " + ModelProperties.getInstance().getActionProbabilities());
+//		//System.out.println("actionProbabilities " + ModelProperties.getInstance().getActionProbabilities());
 		ModelProperties modelProperties = ModelProperties.getInstance();
 		if (Math.random()<modelProperties .getActionProbabilities().get("p_EndosomeTetherStep"))EndosomeTetherStep.tether(this);
 		if (Math.random()<modelProperties .getActionProbabilities().get("p_EndosomeInternalVesicleStep"))EndosomeInternalVesicleStep.internalVesicle(this);
@@ -223,7 +223,7 @@ public class Endosome {
 //				allEndosomes.add((Endosome) obj);
 //			}
 //		}
-////		System.out.println("ALL ENDOSOMES FORM PLASMA MEMBRANE " +allEndosomes);
+////		//System.out.println("ALL ENDOSOMES FORM PLASMA MEMBRANE " +allEndosomes);
 //		return allEndosomes;
 //	}
 
@@ -256,7 +256,7 @@ public class Endosome {
 			double[] radiusHeight = radiusHeightCistern(end.area, end.volume);
 			end.a = radiusHeight[0];
 			end.c = radiusHeight[1];
-//		if (end.a <=0) System.out.println("FLAT FLAT  a    " + end.a +" c " + end.c);
+//		if (end.a <=0) //System.out.println("FLAT FLAT  a    " + end.a +" c " + end.c);
 		}
 		else 	
 		{
@@ -270,10 +270,10 @@ public class Endosome {
 //				//			double cc= (s*3/(4*Math.PI*aa)-aa)/2; Aprox from DOI: 10.2307/3608515
 //				aa = Math.sqrt(v*3d/(4d*Math.PI*cc));			
 //				//				APPROX NOT USEDcc = 1d/(svratio-1d/aa);
-//				//			System.out.println("FORMA s/v " + s/v +" c "+ cc +" a " + aa);
+//				//			//System.out.println("FORMA s/v " + s/v +" c "+ cc +" a " + aa);
 //			}
-////			System.out.println("LONG LONG  c  a  " + cc +" " + aa);
-			if (end.a <=0)System.out.println("PROBLEMA FORMA " + s +" "+v+"");
+////			//System.out.println("LONG LONG  c  a  " + cc +" " + aa);
+			if (end.a <=0); //System.out.println("PROBLEMA FORMA " + s +" "+v+"");
 //			end.a = aa;
 //			end.c = cc;
 		}
@@ -356,13 +356,13 @@ public class Endosome {
 //				System.out.println("RED FUERA ESCALA " + " " + red + " "
 //						+ membraneContent.get(contentPlot) + "  " + area);
 //			if (red > 1)
-//				System.out.println("RED FUERA ESCALA " + " " + contentPlot);
-//			// System.out.println("mHCI content" + red);
+//				//System.out.println("RED FUERA ESCALA " + " " + contentPlot);
+//			// //System.out.println("mHCI content" + red);
 			return red;
 		}
 		if (solubleContent.containsKey(contentPlot)) {
 			double red = solubleContent.get(contentPlot) / volume;
-			// System.out.println("mHCI content" + red);
+			// //System.out.println("mHCI content" + red);
 			return red;
 		} else
 			return 0;
@@ -375,12 +375,12 @@ public class Endosome {
 
 		if (membraneContent.containsKey(contentPlot)) {
 			double green = membraneContent.get(contentPlot) / area;
-			// System.out.println("mHCI content" + red);
+			// //System.out.println("mHCI content" + red);
 			return green;
 		}
 		if (solubleContent.containsKey(contentPlot)) {
 			double green = solubleContent.get(contentPlot) / volume;
-			// System.out.println("mHCI content" + red);
+			// //System.out.println("mHCI content" + red);
 			return green;
 		} else
 			return 0;
@@ -397,7 +397,7 @@ public class Endosome {
 //				System.out.println("BLUE FUERA ESCALA " + " " + blue + " "
 //						+ membraneContent.get(contentPlot) + "  " + area);
 //			if (blue > 1.1)
-//				System.out.println("BLUE FUERA ESCALA " + " " + contentPlot);
+//				//System.out.println("BLUE FUERA ESCALA " + " " + contentPlot);
 
 			return blue;
 		}
@@ -487,11 +487,11 @@ public class Endosome {
 //			h = 2*v0/s1;
 //			double s2 = 2*Math.PI*r*r+ 2*Math.PI*r*h;
 //			s1 = s1-(s2-s0);	
-////			System.out.println("FLAT pasos  c  a  " + r +" " + h);
+////			//System.out.println("FLAT pasos  c  a  " + r +" " + h);
 		double aa = Math.pow(s/PI/4d, (1d/2d));
 		double cc = aa;
 		for (int i = 0; i < 4; i++) {
-//			System.out.println("initial  " + aa +" c " + cc);
+//			//System.out.println("initial  " + aa +" c " + cc);
 			cc = v*3/4/PI/aa/aa;	
 //			form ellipsoid area s = 4*PI*[(ap*bp+ap*cp+bp*cp)/3]^1/p where ap = a^p ....
 //			Since in the spheroid a = b
@@ -508,10 +508,10 @@ public class Endosome {
 			aa = Math.pow(root1, 1/p);
 //			cc=Math.pow((Math.pow((s/4/Math.PI),p)*3 - Math.pow(aa, 2*p))/(2*Math.pow(aa, p)),(1/p));	
 
-//			System.out.println("LONG LONG  c  a  " + aa +" c " + cc);
+//			//System.out.println("LONG LONG  c  a  " + aa +" c " + cc);
 		}
 
-//		if (aa<=0)System.out.println("PROBLEMA FORMA cistern" + s +" "+v+"");
+//		if (aa<=0)//System.out.println("PROBLEMA FORMA cistern" + s +" "+v+"");
 		return new double[] {aa, cc};
 		
 	}
@@ -526,8 +526,8 @@ public class Endosome {
 			cc=Math.pow((Math.pow((s/4/PI),p)*3 - Math.pow(aa, 2*p))/(2*Math.pow(aa, p)),(1/p));
 			aa = Math.sqrt(v*3d/(4d*PI*cc));			
 		}
-//		System.out.println("LONG LONG  c  a  " + cc +" " + aa);
-//		if (aa<=0)System.out.println("PROBLEMA FORMA tube " + s +" "+v+"");
+//		//System.out.println("LONG LONG  c  a  " + cc +" " + aa);
+//		if (aa<=0)//System.out.println("PROBLEMA FORMA tube " + s +" "+v+"");
 		return new double[] {aa, cc};
 	}
 	

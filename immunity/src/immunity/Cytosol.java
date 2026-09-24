@@ -46,7 +46,7 @@ public class Cytosol {
 
 			GridCellNgh<Cytosol> nghCreator = new GridCellNgh<Cytosol>(grid, pt,
 					Cytosol.class, 1, 1);
-			// System.out.println("SIZE           "+gridSize);
+			// //System.out.println("SIZE           "+gridSize);
 
 			List<GridCell<Cytosol>> cellList = nghCreator.getNeighborhood(true);
 			HashMap<String, Double> sumCytoContent = new HashMap<String, Double>();

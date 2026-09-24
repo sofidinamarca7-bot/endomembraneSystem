@@ -5,5 +5,5 @@ poll.frequency = 60.0
 model.output = C:/Users/sofid/OneDrive/Documentos/endomembraneSystem/immunity/output
 
 vm.arguments = 
-local.0.instances = 2
+local.0.instances = 5
 local.0.working_directory = C:/Users/sofid/AppData/Local/Temp/

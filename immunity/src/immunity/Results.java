@@ -89,7 +89,7 @@ public class Results {
 	{
 	File source = new File(LocalPath.getInstance().getPathInputIT()+inputFile);
 	File dest = new File(LocalPath.getInstance().getMyPathOut()+inputFile);
-	System.out.println(source.toString() + dest.toString());
+	//System.out.println(source.toString() + dest.toString());
 	    try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {
@@ -101,7 +101,7 @@ public class Results {
 	{
 	File source = new File(LocalPath.getInstance().getPathInputIT()+"inputFrozenEndosomes.csv");
 	File dest = new File(LocalPath.getInstance().getMyPathOut()+"inputFrozenEndosomes.csv");
-	System.out.println(source.toString() + dest.toString());
+	//System.out.println(source.toString() + dest.toString());
 	    try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {
@@ -180,8 +180,8 @@ public class Results {
 		orderCisternsArea.putAll(cisternsArea);
 //	
 		/*
-		 * System.out.println(orderContDist); System.out.println(orderTotalRabs);
-		 * System.out.println(orderCisternsArea);
+		 * //System.out.println(orderContDist); System.out.println(orderTotalRabs);
+		 * //System.out.println(orderCisternsArea);
 		 */
 		try {
 			writeToCsv(orderContDist);
@@ -338,7 +338,7 @@ public class Results {
 //					initialTotalMembraneCargo.put(mem, value);
 //				}
 //				for (String sol : end.solubleContent.keySet()) {
-////					System.out.println(sol +" soluble");
+////					//System.out.println(sol +" soluble");
 //					double value = initialTotalSolubleCargo.get(sol) + end.solubleContent.get(sol);
 //					initialTotalSolubleCargo.put(sol, value);
 //				}
@@ -352,36 +352,36 @@ public class Results {
 		HashMap<String, Double> solubleSecretion = EndoplasmicReticulum.getInstance().getSolubleRecycle();
 		HashMap<String, Double> membraneSecretion = EndoplasmicReticulum.getInstance().getMembraneRecycle();
 		HashMap<String, Double> solubleCell = Cell.getInstance().getSolubleCell();
-		System.out.println(solubleCell + " VEAMOS ANTES Y DESPUES" + Cell.getInstance().getSolubleCell());
+		//System.out.println(solubleCell + " VEAMOS ANTES Y DESPUES" + Cell.getInstance().getSolubleCell());
 		for (String sol : solubleRecycle.keySet()) {
-//			System.out.println(" soluble "+ sol);
+//			//System.out.println(" soluble "+ sol);
 			double value = solubleRecycle.get(sol);
 			contentDist.put(sol+"Pm", value);
-//			System.out.println("SOLUBLE  PM"+ sol + value );
+//			//System.out.println("SOLUBLE  PM"+ sol + value );
 		}
 		for (String mem : membraneRecycle.keySet()) {
-			//System.out.println(" soluble "+ sol + " Rab " +rab);
+			////System.out.println(" soluble "+ sol + " Rab " +rab);
 			double value = membraneRecycle.get(mem);
 			contentDist.put(mem+"Pm" , value);
-//			System.out.println("MEMBRANE PM  "+ mem + value);
+//			//System.out.println("MEMBRANE PM  "+ mem + value);
 		}			
 		for (String sol : solubleSecretion.keySet()) {
-//			System.out.println(" soluble "+ sol);
+//			//System.out.println(" soluble "+ sol);
 			double value = solubleSecretion.get(sol);
 			contentDist.put(sol+"Er", value);
-//			System.out.println("SOLUBLE  ER "+ sol + value );
+//			//System.out.println("SOLUBLE  ER "+ sol + value );
 		}
 		for (String mem : membraneSecretion.keySet()) {
-			//System.out.println(" soluble "+ sol + " Rab " +rab);
+			////System.out.println(" soluble "+ sol + " Rab " +rab);
 			double value = membraneSecretion.get(mem);
 			contentDist.put(mem+"Er" , value);
-	//		System.out.println("MEMBRANE ER  "+ mem + value);
+	//		//System.out.println("MEMBRANE ER  "+ mem + value);
 		}
 		for (String sol : solubleCell.keySet()) {
-//			System.out.println(" soluble "+ sol);
+//			//System.out.println(" soluble "+ sol);
 			double value = solubleCell.get(sol);
 			contentDist.put(sol+"Cy", value);
-//			System.out.println("SOLUBLE CELL  "+ sol + value +Cell.getInstance().getSolubleCell() );
+//			//System.out.println("SOLUBLE CELL  "+ sol + value +Cell.getInstance().getSolubleCell() );
 		}
 		
 //		for the set of all endosomes, calculate the content distribution among the different
@@ -417,16 +417,16 @@ public class Results {
 
 			for (String rab : rabContent.keySet()) {
 				for (String sol : solubleContent.keySet()) {
-//					System.out.println(" soluble "+ sol + " Rab " +rab);
-//					System.out.println(" FALTA " + contentDist.get(sol + rab));
+//					//System.out.println(" soluble "+ sol + " Rab " +rab);
+//					//System.out.println(" FALTA " + contentDist.get(sol + rab));
 					double value = contentDist.get(sol + rab)
 							+ solubleContent.get(sol) * rabContent.get(rab)
 							/ area;
 					contentDist.put(sol + rab, value);
-					//System.out.println("SOLUBLE"+sol + "Rab" +rab);
+					////System.out.println("SOLUBLE"+sol + "Rab" +rab);
 				}
 				for (String mem : membraneContent.keySet()) {
-//				System.out.println(" membrane "+mem + " Rab " +rab);
+//				//System.out.println(" membrane "+mem + " Rab " +rab);
 					double value = contentDist.get(mem + rab)
 							+ membraneContent.get(mem) * rabContent.get(rab)
 							/ area;
@@ -446,7 +446,7 @@ public class Results {
 			
 			totalArea = totalArea + area;
 			totalIndividualEntropy = totalIndividualEntropy + individualEntropy* area;
-//			System.out.println("INDIVIDUAL ENTROPY " + totalIndividualEntropy);
+//			//System.out.println("INDIVIDUAL ENTROPY " + totalIndividualEntropy);
 // Sum all the organelle volume surrounded by a rab domain
 		for (String rab : rabContent.keySet()){
 			double sum = totalVolumeRabs.get(rab)+ volume*rabContent.get(rab)/area;
@@ -479,7 +479,7 @@ public class Results {
 			totalCisternsArea = totalCisternsArea + cisternsArea.get(rab);
 		}
 		HashMap<String, Double> relativeCisternsArea = new HashMap<String, Double>();
-//		System.out.println(" CISTERNA AREA      " + cisternsArea);
+//		//System.out.println(" CISTERNA AREA      " + cisternsArea);
 
 
 		double entropy = 0d;
@@ -498,7 +498,7 @@ public class Results {
 		
 		
 //		sum in cytosol
-//		System.out.println(" TOTAL INDIVIDUAL ENTROPY      " + cisternsArea.get("entropyInd"));
+//		//System.out.println(" TOTAL INDIVIDUAL ENTROPY      " + cisternsArea.get("entropyInd"));
 
 
 	}

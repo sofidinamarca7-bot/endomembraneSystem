@@ -46,7 +46,7 @@ public class UptakeStep2 {
 //		Cell cell = Cell.getInstance();
 		HashMap<String, Double> totalRabs = new HashMap<String, Double>(Results.getInstance().getTotalRabs());
 		HashMap<String, Double> initialTotalRabs = new HashMap<String, Double>(Results.getInstance().getInitialTotalRabs());
-		//		System.out.println("totalRabs  "+totalRabs);
+		//		//System.out.println("totalRabs  "+totalRabs);
 
 		HashMap<String, Double> deltaRabs = new HashMap<String, Double>();  
 		HashMap<String, String> rabCode = new HashMap<String, String>();
@@ -64,16 +64,16 @@ public class UptakeStep2 {
 		double initialAreaPM = PlasmaMembrane.getInstance().getInitialPlasmaMembraneArea();
 
 		if(areaPM > initialAreaPM) {
-//		System.out.println(" 	NEW UPTAKE PM   " + areaPM + "    "+initialAreaPM);
+//		//System.out.println(" 	NEW UPTAKE PM   " + areaPM + "    "+initialAreaPM);
 		newUptake(cell,"RabA");
-	//	System.out.println(" 	NEW NEW UPTAKE    " + PlasmaMembrane.getInstance().getPlasmaMembraneArea() + "    "+initialAreaPM);}
+	//	//System.out.println(" 	NEW NEW UPTAKE    " + PlasmaMembrane.getInstance().getPlasmaMembraneArea() + "    "+initialAreaPM);}
 		}
 		//		NEW SECRETORY EVENT
 		double areaER = EndoplasmicReticulum.getInstance().getendoplasmicReticulumArea();
 		double initialAreaER = EndoplasmicReticulum.getInstance().getInitialendoplasmicReticulumArea();
 
 		if (areaER > initialAreaER) {
-//			System.out.println(" 	NEW UPTAKE ER   " + areaER + "    "+initialAreaER);
+//			//System.out.println(" 	NEW UPTAKE ER   " + areaER + "    "+initialAreaER);
 		
 		newSecretion(cell,"RabI");
 		}
@@ -81,12 +81,12 @@ public class UptakeStep2 {
 		if (3>1) return;
 
 		for (String rab : totalRabs.keySet()){
-			//			System.out.println("ErrorRabs  "+ rab + "   " +initialTotalRabs.get(rab) +"     "+ totalRabs.get(rab));
+			//			//System.out.println("ErrorRabs  "+ rab + "   " +initialTotalRabs.get(rab) +"     "+ totalRabs.get(rab));
 			double value = initialTotalRabs.get(rab) - totalRabs.get(rab);
 			deltaRabs.put(rab, value);
 		}
 
-		//	System.out.println("Initial Rabs  "+ initialTotalRabs + " \n delta Rabs"+ deltaRabs);
+		//	//System.out.println("Initial Rabs  "+ initialTotalRabs + " \n delta Rabs"+ deltaRabs);
 		double largeDelta = 0d;
 		String selectedRab = "";
 		for (String rab : deltaRabs.keySet()){
@@ -95,13 +95,13 @@ public class UptakeStep2 {
 				largeDelta=deltaRabs.get(rab);
 			}	
 		}
-		//		System.out.println("selected Rab for uptake "+ selectedRab);
+		//		//System.out.println("selected Rab for uptake "+ selectedRab);
 		//		If no rab was selected or the surface required is small (less than a sphere of 60 nm radius, 
 		//		no uptake is required
 		if (selectedRab.equals("")|| deltaRabs.get(selectedRab)<450000000) return;
 		//if the selected Rab correspond to Early Endosomes, new uptake
 		String selectedOrganelle = ModelProperties.getInstance().getRabOrganelle().get(selectedRab);
-//		System.out.println(" 	NEW UPTAKE OTHER   " + selectedRab + "  " + deltaRabs);
+//		//System.out.println(" 	NEW UPTAKE OTHER   " + selectedRab + "  " + deltaRabs);
 		if (selectedOrganelle.equals("EE")){ 
 			newUptake(cell,selectedRab);}
 		else if (selectedOrganelle.equals("ERGIC")){ 
@@ -114,7 +114,7 @@ public class UptakeStep2 {
 		
 	private static void newSecretion(Cell cell, String selectedRab) {
 		double cellLimit = 3d * Cell.orgScale;
-//		System.out.println("secretion " +	InitialOrganelles.getInstance().getInitOrgProp().get("kind9"));
+//		//System.out.println("secretion " +	InitialOrganelles.getInstance().getInitOrgProp().get("kind9"));
 		HashMap<String, Double> initOrgProp = new HashMap<String, Double>(
 				InitialOrganelles.getInstance().getInitOrgProp().get("kind9"));
 		HashMap<String, Double> rabCell = cell.getRabCell();
@@ -141,7 +141,7 @@ public class UptakeStep2 {
 		double cf= Math.pow(c, f);
 		double area = 4d* PI*Math.pow((af*af+af*cf+af*cf)/3, 1/f);
 		double endoplasmicReticulum = EndoplasmicReticulum.getInstance().getendoplasmicReticulumArea() - area;
-//		System.out.println("LUEGO DE UPTAKE  "+ endoplasmicReticulum);
+//		//System.out.println("LUEGO DE UPTAKE  "+ endoplasmicReticulum);
 		EndoplasmicReticulum.getInstance().setendoplasmicReticulumArea(endoplasmicReticulum);
 		double volume = 4d/3d*PI*a*a*c;
 		initOrgProp.put("area", area);
@@ -169,7 +169,7 @@ public class UptakeStep2 {
 //			double valueInEn = 0d;
 			double valueInER =0d;
 //			double valueInTotal = 0d;
-//		System.out.println(mem + ModelProperties.getInstance().getSecretionRate().get(mem) + "   secretion 1111  " + valueInER+membraneContent);
+//		//System.out.println(mem + ModelProperties.getInstance().getSecretionRate().get(mem) + "   secretion 1111  " + valueInER+membraneContent);
 			if (EndoplasmicReticulum.getInstance().getMembraneRecycle().containsKey(mem))
 			{
 				double valueER = EndoplasmicReticulum.getInstance().getMembraneRecycle().get(mem);
@@ -177,7 +177,7 @@ public class UptakeStep2 {
 
 				if (valueInER >= area) valueInER = area; // cannot incorporate more metabolite than its area
 				membraneContent.put(mem, valueInER);
-				//	System.out.println(mem + valueER + "   UPTAKE DECREASE 1111  " + valueInER);
+				//	//System.out.println(mem + valueER + "   UPTAKE DECREASE 1111  " + valueInER);
 				// decrease ER content
 				EndoplasmicReticulum.getInstance().getMembraneRecycle().put(mem, valueER-valueInER);
 			}
@@ -233,7 +233,7 @@ public class UptakeStep2 {
 		space.moveTo(bud, rnd * 50, upPosition);
 		grid.moveTo(bud, (int) rnd * 50, (int) upPosition);
 		
-		//			System.out.println(area + "NEW UPTAKE" + bud.membraneContent);
+		//			//System.out.println(area + "NEW UPTAKE" + bud.membraneContent);
 		//			try {
 		//			TimeUnit.SECONDS.sleep(5);
 		//		} catch (InterruptedException e) {
@@ -245,12 +245,12 @@ public class UptakeStep2 {
 
 	private static void newUptake(Cell cell, String selectedRab) {
 		double cellLimit = 3d * Cell.orgScale;
-//		System.out.println("UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get("kind1"));
+//		//System.out.println("UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get("kind1"));
 		HashMap<String, Double> initOrgProp = new HashMap<String, Double>(
 				InitialOrganelles.getInstance().getInitOrgProp().get("kind1"));
 		
-//		System.out.println("PROPIEDADES RAB A  "+initOrgProp);
-//		System.out.println("A VER?" + InitialOrganelles.getInstance().getInitOrgProp().get("kind2"));
+//		//System.out.println("PROPIEDADES RAB A  "+initOrgProp);
+//		//System.out.println("A VER?" + InitialOrganelles.getInstance().getInitOrgProp().get("kind2"));
 		HashMap<String, Double> rabCell = cell.getRabCell();
 
 		if (!rabCell.containsKey("RabA") || Math.random()>rabCell.get("RabA")){
@@ -278,7 +278,7 @@ public class UptakeStep2 {
 		int tick = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 //		if (tick == 1) uptakeArea = 0d;
 		uptakeArea = uptakeArea + area;
-//		System.out.println(uptakeArea + " TOTAL UPTAKE UPTAKE "+ plasmaMembrane + "  "+ area + " " + tick);
+//		//System.out.println(uptakeArea + " TOTAL UPTAKE UPTAKE "+ plasmaMembrane + "  "+ area + " " + tick);
 		PlasmaMembrane.getInstance().setPlasmaMembraneArea(plasmaMembrane);
 		
 		double volume = 4d/3d*PI*a*a*c;
@@ -287,7 +287,7 @@ public class UptakeStep2 {
 		value = value + area;
 		Results.instance.getTotalRabs().put("RabA", value);
 		initOrgProp.put("volume", volume);
-//		System.out.println("PROPIEDADES RAB A  "+initOrgProp);
+//		//System.out.println("PROPIEDADES RAB A  "+initOrgProp);
 //		try {
 //			Thread.sleep(4000);
 //		} catch (InterruptedException e) {
@@ -321,7 +321,7 @@ public class UptakeStep2 {
 			{
 				double valuePM = PlasmaMembrane.getInstance().getMembraneRecycle().get(mem);
 				valueInPM = valuePM * ModelProperties.getInstance().getUptakeRate().get(mem) * area/ PlasmaMembrane.getInstance().getPlasmaMembraneArea();	
-				//				System.out.println(mem + valuePM + "   UPTAKE FROM PM 1111  " + valueInPM+membraneContent);
+				//				//System.out.println(mem + valuePM + "   UPTAKE FROM PM 1111  " + valueInPM+membraneContent);
 				// decrease PM content
 				PlasmaMembrane.getInstance().getMembraneRecycle().put(mem, valuePM-valueInPM);
 			}
@@ -334,11 +334,11 @@ public class UptakeStep2 {
 			valueInTotal = valueInEn + valueInPM; 
 			if (valueInTotal >= area) valueInTotal= area;// cannot incorporate more metabolite than its area
 			membraneContent.put(mem, valueInTotal);
-//			System.out.println(mem + valueInTotal + "   UPTAKE FROM PM 1111  " + valueInPM+membraneContent);
+//			//System.out.println(mem + valueInTotal + "   UPTAKE FROM PM 1111  " + valueInPM+membraneContent);
 
 
 		}
-		System.out.println("MEMBRANE CONTENT UPTAKE " + membraneContent);
+		//System.out.println("MEMBRANE CONTENT UPTAKE " + membraneContent);
 		HashMap<String, Double> solubleContent = new HashMap<String,Double>();
 		Set<String> solubleMet = new HashSet<String>(ModelProperties.getInstance().getSolubleMet());
 		for (String sol : solubleMet){
@@ -411,7 +411,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 
 	PlasmaMembrane.getInstance().getPlasmaMembraneTimeSeries().clear();
 	
-//				System.out.println(area + "NEW UPTAKE" + bud.membraneContent);
+//				//System.out.println(area + "NEW UPTAKE" + bud.membraneContent);
 //				try {
 //				TimeUnit.SECONDS.sleep(5);
 //			} catch (InterruptedException e) {
@@ -450,7 +450,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 			// membrane content associated to this rab/total area of the rab.  This is an average of the membrane content associated to the specific
 			// Rab.  Marker is set to zero.
 					for (String mem : membraneMet){
-//						//				System.out.println(mem + "  MMEEMM " + selectedRab + "\n " + Results.getInstance().getContentDist());
+//						//				//System.out.println(mem + "  MMEEMM " + selectedRab + "\n " + Results.getInstance().getContentDist());
 						value = Results.getInstance().getContentDist().get(mem+selectedRab)
 								/Results.getInstance().getTotalRabs().get(selectedRab);
 						membraneContent.put(mem, value * area);
@@ -484,11 +484,11 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 					grid.moveTo(bud, (int) rnd * 50, (int) (5));
 
 
-//					System.out.println(membraneContent + " " + solubleContent + " " + rabContent+" " + initOrgProp);
+//					//System.out.println(membraneContent + " " + solubleContent + " " + rabContent+" " + initOrgProp);
 	
 		}
 		else {// new non Golgi organelles
-//		System.out.println(kind + " UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get(kind));
+//		//System.out.println(kind + " UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get(kind));
 
 		HashMap<String, Double> initOrgProp = new HashMap<String, Double>(
 				InitialOrganelles.getInstance().getInitOrgProp().get(kind));
@@ -521,7 +521,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 // membrane content associated to this rab/total area of the rab.  This is an average of the membrane content associated to the specific
 // Rab.  Marker is set to zero.
 		for (String mem : membraneMet){
-			//				System.out.println(mem + "  MMEEMM " + selectedRab + "\n " + Results.getInstance().getContentDist());
+			//				//System.out.println(mem + "  MMEEMM " + selectedRab + "\n " + Results.getInstance().getContentDist());
 			value = Results.getInstance().getContentDist().get(mem+selectedRab)
 					/Results.getInstance().getTotalRabs().get(selectedRab);
 			membraneContent.put(mem, value * area);

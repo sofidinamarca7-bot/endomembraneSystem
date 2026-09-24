@@ -66,15 +66,15 @@ public class PlasmaMembrane {
 		for (String met : modelProperties.initPMmembraneRecycle.keySet() ){
 		membraneRecycle.put(met, modelProperties.initPMmembraneRecycle.get(met));
 		}
-//		System.out.println("PM membraneRecycle "+ membraneRecycle);
+//		//System.out.println("PM membraneRecycle "+ membraneRecycle);
 		for (String met : modelProperties.initPMsolubleRecycle.keySet() ){
 		solubleRecycle.put(met, modelProperties.initPMsolubleRecycle.get(met));
 		}
-//		System.out.println("PM solubleRecycle "+ solubleRecycle);		
+//		//System.out.println("PM solubleRecycle "+ solubleRecycle);		
 //		for (String met : modelProperties.solubleMet ){
 //		solubleRecycle.put(met,  0.0);
 //		}
-//		System.out.println("solubleRecycle "+solubleRecycle);		
+//		//System.out.println("solubleRecycle "+solubleRecycle);		
 	}
 
 	@ScheduledMethod(start = 1, interval = 1)
@@ -118,12 +118,12 @@ public class PlasmaMembrane {
 		
 		if (membraneRecycle.containsKey("pepMHCIEn")) c1 = membraneRecycle.get("pepMHCIEn");
 		c1 = c1/plasmaMembraneArea;
-//		System.out.println(PlasmaMembrane.getInstance().getMembraneRecycle()+"\n COLOR PLASMA  " + c1+" " + pmcolor);
+//		//System.out.println(PlasmaMembrane.getInstance().getMembraneRecycle()+"\n COLOR PLASMA  " + c1+" " + pmcolor);
 		if (c1>1) c1=1;
 		pmcolor = (int) (c1*255);
 		
 
-//		System.out.println(PlasmaMembrane.getInstance().getMembraneRecycle()+"\n COLOR PLASMA  " + pmcolor+" " + pmcolor);
+//		//System.out.println(PlasmaMembrane.getInstance().getMembraneRecycle()+"\n COLOR PLASMA  " + pmcolor+" " + pmcolor);
 	}
 	
 

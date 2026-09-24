@@ -69,15 +69,15 @@ public class EndoplasmicReticulum {
 		double value = modelProperties.initERmembraneRecycle.get(met)*endoplasmicReticulumArea;
 		membraneRecycle.put(met, value);
 		}
-//		System.out.println("ER membraneRecycle "+ membraneRecycle + endoplasmicReticulumArea);
+//		//System.out.println("ER membraneRecycle "+ membraneRecycle + endoplasmicReticulumArea);
 		for (String met : modelProperties.initERsolubleRecycle.keySet() ){
 		solubleRecycle.put(met, modelProperties.initERsolubleRecycle.get(met)*endoplasmicReticulumVolume);
 		}
-//		System.out.println("ER solubleRecycle "+ solubleRecycle);		
+//		//System.out.println("ER solubleRecycle "+ solubleRecycle);		
 //		for (String met : modelProperties.solubleMet ){
 //		solubleRecycle.put(met,  0.0);
 //		}
-//		System.out.println("solubleRecycle "+solubleRecycle);		
+//		//System.out.println("solubleRecycle "+solubleRecycle);		
 	}
 
 	@ScheduledMethod(start = 1, interval = 1)
@@ -100,13 +100,13 @@ public class EndoplasmicReticulum {
 	//	if (tick < 120000) growth = 1.005;
 //	else if (tick >= 120000 && tick < 300000)growth = 1.0025;
 //	else growth = 1.01;
-//	System.out.println("soluble Cell  wwwww  " +this.getSolubleCell());
+//	//System.out.println("soluble Cell  wwwww  " +this.getSolubleCell());
 //	As set here, it growth at 0.005(probability)*0.005(from 1.005)*1000(ticks per min) = 0.025 of ER 
 //	area per 1000 tick (1 min) = 2.5%/min
 	double areaER = EndoplasmicReticulum.getendoplasmicReticulumArea();
-//	System.out.println("INITIAL AREA ER  " + areaER);
+//	//System.out.println("INITIAL AREA ER  " + areaER);
 	EndoplasmicReticulum.getInstance().setendoplasmicReticulumArea(areaER*growth);//1.005
-//	System.out.println("FINAL AREA ER  " + EndoplasmicReticulum.getendoplasmicReticulumArea());
+//	//System.out.println("FINAL AREA ER  " + EndoplasmicReticulum.getendoplasmicReticulumArea());
 	}
 	public void changeColor() {
 		double c1 = 0d;
@@ -117,7 +117,7 @@ public class EndoplasmicReticulum {
 		ercolor = (int) (c1*255);
 		}
 
-//		System.out.println(endoplasmicReticulum.getInstance().getMembraneRecycle()+"\n COLOR PLASMA  " + ERcolor+" " + ercolor);
+//		//System.out.println(endoplasmicReticulum.getInstance().getMembraneRecycle()+"\n COLOR PLASMA  " + ERcolor+" " + ercolor);
 	}
 	
 

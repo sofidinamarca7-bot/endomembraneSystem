@@ -34,7 +34,7 @@ public class EndosomeInternalVesicleStep {
 		//	Organelles with Rabs corresponding to EE, SE and LE can form internal vesicles
 		String maxRab = Collections.max(endosome.rabContent.entrySet(), Map.Entry.comparingByValue()).getKey();
 		String organelle = ModelProperties.getInstance().getRabOrganelle().get(maxRab);
-		//		System.out.println("ORGANELLE  " + organelle);
+		//		//System.out.println("ORGANELLE  " + organelle);
 		if (!organelle.equals("EE")
 				&& !organelle.equals("SE")
 				&& !organelle.equals("LE"))
@@ -59,7 +59,7 @@ public class EndosomeInternalVesicleStep {
 		minV = minV + mvbVolume;
 		if (sp * sp * sp / (minV * minV) <= 36 * PI) return;
 
-		//		System.out.println("INTERNAL VESICLE ORGANELLE" + organelle);
+		//		//System.out.println("INTERNAL VESICLE ORGANELLE" + organelle);
 //	After all this control, a single vesicle is formed.
 
 		int nroVesicles = 1;
@@ -67,7 +67,7 @@ public class EndosomeInternalVesicleStep {
 				ModelProperties.getInstance().getRabTropism());
 		endosome.area = endosome.area - nroVesicles * sIV;
 		endosome.volume = endosome.volume + nroVesicles * vIV;
-//		System.out.println("Nro Vesicles " + nroVesicles +"  "+ endosome.area +"  "+ endosome.volume);
+//		//System.out.println("Nro Vesicles " + nroVesicles +"  "+ endosome.area +"  "+ endosome.volume);
 		Endosome.endosomeShape(endosome);
 		if (endosome.solubleContent.containsKey("mvb")) {
 			double content = endosome.solubleContent.get("mvb") + nroVesicles;
@@ -104,7 +104,7 @@ public class EndosomeInternalVesicleStep {
 		// Membrane content with mvb tropism is degraded (e.g. EGF)
 		//this can be established in RabTropism adding in the EGF tropisms "mvb",
 		for (String content : endosome.membraneContent.keySet()) {
-//			System.out.println(endosome.membraneContent+"\n"+ content + "\n" + " CHOLESTEROL RAB TROPISM " + rabTropism.get(content)+ "  \n"+rabTropism);
+//			//System.out.println(endosome.membraneContent+"\n"+ content + "\n" + " CHOLESTEROL RAB TROPISM " + rabTropism.get(content)+ "  \n"+rabTropism);
 			if(content.equals("membraneMarker")) {
 				if (endosome.membraneContent.get("membraneMarker")>0.9){
 					endosome.membraneContent.put("membraneMarker", 1d);

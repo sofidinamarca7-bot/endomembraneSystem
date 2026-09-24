@@ -32,7 +32,7 @@ public class EndosomeCopasiStep {
 			return;
 			}
 		if (!endosome.endosomeTimeSeries.containsKey(tick)) {
-//			System.out.println("Return without UPDATED");
+//			//System.out.println("Return without UPDATED");
 			return;
 		}else {
 
@@ -87,7 +87,7 @@ public class EndosomeCopasiStep {
 				double metValue = Cell.getInstance().getSolubleCell().get(met)
 						+ delta * endosome.volume/Cell.getInstance().getCellVolume();
 				Cell.getInstance().getSolubleCell().put(met, metValue);
-//			 System.out.println("SOLUBLE CELL " + Cell.getInstance().getSolubleCell()+ " MET " + met);
+//			 //System.out.println("SOLUBLE CELL " + Cell.getInstance().getSolubleCell()+ " MET " + met);
 //				endosome.solubleContent.remove(met);
 			}
 //			Only a fraction of the metabolite in the plasma membrane participates
@@ -130,7 +130,7 @@ public class EndosomeCopasiStep {
 			lipidMetabolism.getModel().getCompartment(i).setInitialValue(endosome.volume);
 		else 
 			lipidMetabolism.getModel().getCompartment(i).setInitialValue(1);
-//		System.out.println("compartimiento volumen \t" + lipidMetabolism.getModel().getCompartment(i).getObjectName() + lipidMetabolism.getModel().getCompartment(i).getInitialValue());
+//		//System.out.println("compartimiento volumen \t" + lipidMetabolism.getModel().getCompartment(i).getObjectName() + lipidMetabolism.getModel().getCompartment(i).getInitialValue());
         }
 
 		Set<String> metabolites = lipidMetabolism.getMetabolites();
@@ -142,7 +142,7 @@ public class EndosomeCopasiStep {
 			if (met.endsWith("En") && endosome.membraneContent.containsKey(met1)) {
 				double metValue = endosome.membraneContent.get(met1)/endosome.area;
 //				double a = sigFigs(metValue, 5);
-//				System.out.println(metValue +" REDONDEO "+ a);
+//				//System.out.println(metValue +" REDONDEO "+ a);
 				lipidMetabolism.setInitialConcentration(met, sigFigs(metValue,6));
 				localM.put(met, sigFigs(metValue,6));
 			} else if (met.endsWith("En") && endosome.solubleContent.containsKey(met1)) {
@@ -178,19 +178,19 @@ public class EndosomeCopasiStep {
 //				proportional to the volume of endosome.  In brief, no need to consider a metLeft
 			} else if (met.endsWith("Cy") && Cell.getInstance().getSolubleCell().containsKey(met1)) {
 				double metValue = Cell.getInstance().getSolubleCell().get(met1);
-//				System.out.println(Cell.area + "volume cell "+Cell.volume);
+//				//System.out.println(Cell.area + "volume cell "+Cell.volume);
 //				double metLeft = metValue*(Cell.getInstance().getCellVolume() - endosome.volume)/(Cell.getInstance().getCellVolume());
 //				Cell.getInstance().getSolubleCell().put(met1, metLeft);
 				lipidMetabolism.setInitialConcentration(met, sigFigs(metValue,6));
 				localM.put(met, sigFigs(metValue,6));
 //			} else if (met.equals("area")) {
 //				double metValue = endosome.area;
-////				System.out.println(Cell.area + "volume cell "+Cell.volume);
+////				//System.out.println(Cell.area + "volume cell "+Cell.volume);
 //				lipidMetabolism.setInitialConcentration(met, sigFigs(metValue,6));
 //				localM.put(met, sigFigs(metValue,6));
 //			} else if (met.equals("volume")) {
 //				double metValue = endosome.volume;
-////				System.out.println(Cell.area + "volume cell "+Cell.volume);
+////				//System.out.println(Cell.area + "volume cell "+Cell.volume);
 //				lipidMetabolism.setInitialConcentration(met, sigFigs(metValue,6));
 //				localM.put(met, sigFigs(metValue,6));
 			} else {
@@ -202,9 +202,9 @@ public class EndosomeCopasiStep {
 //		lipidMetabolism.setInitialConcentration("protonEn", 1e-04); // pH 7
 		localM.put("protonCy", 1e-04);
 //		localM.put("protonEn", 1e-04);
-//		System.out.println(endosome.membraneContent.get("pepMHCIEn")+" METABOLITES IN "+ localM);
+//		//System.out.println(endosome.membraneContent.get("pepMHCIEn")+" METABOLITES IN "+ localM);
 //for (String met:localM.keySet()) {if (localM.get(met).isNaN()) localM.put(met,0.0);}
-//		System.out.println(endosome.membraneContent.get("pepMHCIEn")+" METABOLITES IN "+ localM);
+//		//System.out.println(endosome.membraneContent.get("pepMHCIEn")+" METABOLITES IN "+ localM);
 
 //		if (localM.get("proton")==null||localM.get("proton") < 1e-05){
 //			lipidMetabolism.setInitialConcentration("proton", 1e-04);
@@ -225,7 +225,7 @@ public class EndosomeCopasiStep {
 			HashMap<String, Double> value = new HashMap<String, Double>();
 			for (int met = 1; met < metNro +1; met = met +1){
 //				if (timeSeries.getTitle(met).equals("protonEn")) 
-//				System.out.println(met + " EndosomeEn "+timeSeries.getTitle(met));
+//				//System.out.println(met + " EndosomeEn "+timeSeries.getTitle(met));
 				if (timeSeries.getTitle(met).equals("pepMHCIEn")){
 						if (time == 1 ) initpepMHC = timeSeries.getConcentrationData(time, met);
 						else if (time == stepNro - 1 ) finalpepMHC = timeSeries.getConcentrationData(time, met);
@@ -235,14 +235,14 @@ public class EndosomeCopasiStep {
 			}
 		}
 		if(initpepMHC > 0 || finalpepMHC > 0) {
-//		System.out.println(initpepMHC +" ENDOSOME WITH pepMHC "+ finalpepMHC + endosome.toString());
+//		//System.out.println(initpepMHC +" ENDOSOME WITH pepMHC "+ finalpepMHC + endosome.toString());
 		endosome.complexMHC = finalpepMHC;
 		endosome.assembleMHC = finalpepMHC - initpepMHC;
 		}	
 		
 //		delta = delta + (localM.get("cMHCIEn")+localM.get("oMHCIEn")+localM.get("pepMHCIEn"))-
 //				(timeSeries.getConcentrationData(1, 9)+timeSeries.getConcentrationData(1, 10)+timeSeries.getConcentrationData(1, 11));
-//			System.out.println("DELTA "+ delta);		
+//			//System.out.println("DELTA "+ delta);		
 		}
 	public static double sigFigs(double n, int sig) {
 //		if (Math.abs(n) < 1E-20) return 0d;

@@ -93,7 +93,7 @@ public class RecycleStep {
 			EndoplasmicReticulum.getInstance().getendoplasmicReticulumTimeSeries().clear();
 			double endoplasmicReticulum = endosome.area + EndoplasmicReticulum.getInstance().getendoplasmicReticulumArea();
 			EndoplasmicReticulum.getInstance().setEndoplasmicReticulumArea(endoplasmicReticulum);
-//			System.out.println("RECYCLING OF ER  " + endoplasmicReticulum);
+//			//System.out.println("RECYCLING OF ER  " + endoplasmicReticulum);
 //			to delete the recycled endosome.
 			Context<Object> context = ContextUtils.getContext(endosome);
 			context.remove(endosome);
@@ -144,7 +144,7 @@ public class RecycleStep {
 				PlasmaMembrane.getInstance().getPlasmaMembraneTimeSeries().clear();
 				double plasmaMembrane = endosome.area + PlasmaMembrane.getInstance().getPlasmaMembraneArea();
 				PlasmaMembrane.getInstance().setPlasmaMembraneArea(plasmaMembrane);
-//				System.out.println("SECRETION TGN OR RE" + plasmaMembrane);
+//				//System.out.println("SECRETION TGN OR RE" + plasmaMembrane);
 			Context<Object> context = ContextUtils.getContext(endosome);
 			context.remove(endosome);
 			}
@@ -211,7 +211,7 @@ public class RecycleStep {
 			PlasmaMembrane.getInstance().getPlasmaMembraneTimeSeries().clear();
 			double plasmaMembrane = endosome.area + PlasmaMembrane.getInstance().getPlasmaMembraneArea();
 			PlasmaMembrane.getInstance().setPlasmaMembraneArea(plasmaMembrane);
-//			System.out.println("RECYCLING OF EE  " + plasmaMembrane);
+//			//System.out.println("RECYCLING OF EE  " + plasmaMembrane);
 
 //			to delete the recycled EE endosome.
 			Context<Object> context = ContextUtils.getContext(endosome);

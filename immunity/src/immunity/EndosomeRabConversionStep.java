@@ -25,24 +25,24 @@ public class EndosomeRabConversionStep {
 		if (endosome.getRabTimeSeries().isEmpty()){			
 			callRabConversion(endosome);
 			timeSeriesLoadintoEndosome(endosome);
-//			System.out.println("RabConversion first time");
+//			//System.out.println("RabConversion first time");
 			return;
 		} 
 		if (tick >= Collections.max(endosome.getRabTimeSeries().keySet())) {
-//			System.out.println("COLLECTION" + tick + " " + endosome.getRabTimeSeries().keySet());
+//			//System.out.println("COLLECTION" + tick + " " + endosome.getRabTimeSeries().keySet());
 			timeSeriesLoadintoEndosome(endosome);
 			endosome.getRabTimeSeries().clear();
 			callRabConversion(endosome);
-//			System.out.println("RabConversion called after 50 time series");
-//			System.out.println("COLLECTION" + tick + " " + endosome.getRabTimeSeries().keySet());
+//			//System.out.println("RabConversion called after 50 time series");
+//			//System.out.println("COLLECTION" + tick + " " + endosome.getRabTimeSeries().keySet());
 			return;
 			}
 		if (!endosome.rabTimeSeries.containsKey(tick)) {
-//			System.out.println("Return without UPDATED");
+//			//System.out.println("Return without UPDATED");
 			return;
 		}else {
 			timeSeriesLoadintoEndosome(endosome);
-//			System.out.println("Rabs UPDATED FROM TIME SERIES");
+//			//System.out.println("Rabs UPDATED FROM TIME SERIES");
 			return;
 
 		}
@@ -102,9 +102,9 @@ public class EndosomeRabConversionStep {
 //		System.out.println("COPASI FINAL membrane " + endosome.rabContent + " soluble "
 //				+ Cell.getInstance().getRabCell());
 //		
-//	System.out.println("Rabs UPDATED");
+//	//System.out.println("Rabs UPDATED");
 //	for (String met :presentValues.keySet()){
-//	System.out.println(met+ " "+presentValues.get(met));
+//	//System.out.println(met+ " "+presentValues.get(met));
 //		}
 		
 		
@@ -123,11 +123,11 @@ public class EndosomeRabConversionStep {
 				if (endosome.rabContent.containsKey(Rab)) {
 					double metValue = endosome.rabContent.get(Rab) / endosome.area;
 					rabConversion.setInitialConcentration(met, Math.round(metValue*1E6d)/1E6d);
-//					System.out.println("COPASI INITIAL MEMBRANE " + met + " " + metValue);
+//					//System.out.println("COPASI INITIAL MEMBRANE " + met + " " + metValue);
 
 				} else {
 					rabConversion.setInitialConcentration(met, 0.0);
-					// System.out.println("COPASI INITIAL " + met + 0.0);
+					// //System.out.println("COPASI INITIAL " + met + 0.0);
 				}
 			}
 
@@ -135,13 +135,13 @@ public class EndosomeRabConversionStep {
 				String Rab = met.substring(0, 4);
 				if (Cell.getInstance().getRabCell().containsKey(Rab)) {
 					double metValue = Cell.getInstance().getRabCell().get(Rab);
-//					System.out.println("COPASI INITIAL CYTOSOL " + Rab + " " + metValue +"  "+Cell.getInstance().getRabCell().get(Rab) );
+//					//System.out.println("COPASI INITIAL CYTOSOL " + Rab + " " + metValue +"  "+Cell.getInstance().getRabCell().get(Rab) );
 					rabConversion.setInitialConcentration(met, Math.round(metValue*1E6d)/1E6d);
-//					System.out.println("COPASI INITIAL CYTOSOL " + met + " " + metValue);
+//					//System.out.println("COPASI INITIAL CYTOSOL " + met + " " + metValue);
 					// + Cell.getInstance().rabCell.get(Rab));
 				} else {
 					rabConversion.setInitialConcentration(met, 0.0);
-					// System.out.println("COPASI INITIAL " + met + 0.0);
+					// //System.out.println("COPASI INITIAL " + met + 0.0);
 
 				}
 			}
@@ -153,7 +153,7 @@ public class EndosomeRabConversionStep {
 					double rcyl = ModelProperties.getInstance().getCellK().get("rcyl");
 					double radius = Math.sqrt(endosome.getArea()/(4d * Math.PI));
 					rabConversion.setInitialConcentration(met, radius*radius/rcyl/rcyl);
-					//				System.out.println("RELATIVE RADIUS  "+ radius/rcyl); in a normal run, between 1 and 13
+					//				//System.out.println("RELATIVE RADIUS  "+ radius/rcyl); in a normal run, between 1 and 13
 				}
 				else {				
 					rabConversion.setInitialConcentration(met, 1d);
@@ -180,7 +180,7 @@ public class EndosomeRabConversionStep {
 			endosome.getRabTimeSeries().put((int) (tick+time*Cell.timeScale/0.03),value);
 		}
 		
-//		System.out.println("RAB time series "+ tick +" " +endosome.getRabTimeSeries());
+//		//System.out.println("RAB time series "+ tick +" " +endosome.getRabTimeSeries());
 		
 //		for (String met : metabolites) {
 //			if (met.endsWith("m")) {

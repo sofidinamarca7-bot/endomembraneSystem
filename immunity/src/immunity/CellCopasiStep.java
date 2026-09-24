@@ -18,26 +18,26 @@ public class CellCopasiStep {
 //		cell content is changed all the time by reactions in endosomes.  Hence, cell must call COPASI every time and cannot renew its values
 //		from a time series
 		int tick = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
-//		System.out.println("INICIAL EN ANTPRESL " + cell.getSolubleCell());
+//		//System.out.println("INICIAL EN ANTPRESL " + cell.getSolubleCell());
 		cell.getCellTimeSeries().clear();
 		if (cell.getCellTimeSeries().isEmpty()){
-//			System.out.println("MANDA DESDE ANTPRESL " + cell.getSolubleCell());
+//			//System.out.println("MANDA DESDE ANTPRESL " + cell.getSolubleCell());
 			callCellCopasi(cell);
-//			System.out.println("LUEGO QUEDA ANTPRESL " + cell.getSolubleCell());
+//			//System.out.println("LUEGO QUEDA ANTPRESL " + cell.getSolubleCell());
 			timeSeriesLoadintoCell(cell);
-//			System.out.println("Y SE CARGA DESDE TIME SERIES " + Cell.getInstance().getSolubleCell());
+//			//System.out.println("Y SE CARGA DESDE TIME SERIES " + Cell.getInstance().getSolubleCell());
 			return;
 		} 
 //		if (tick >= Collections.max(cell.getCellTimeSeries().keySet())) {
-////		System.out.println("AAmmmMANDA DESDE ANTPRESL " + cell.getSolubleCell());
+////		//System.out.println("AAmmmMANDA DESDE ANTPRESL " + cell.getSolubleCell());
 //			timeSeriesLoadintoCell(cell);
-////			System.out.println("BBmmmMANDA DESDE ANTPRESL " + solCell);
+////			//System.out.println("BBmmmMANDA DESDE ANTPRESL " + solCell);
 //			cell.getCellTimeSeries().clear();
 //			callCellCopasi(cell, cell.getSolubleCell());
 //			return;
 //			}
 //		if (!cell.getCellTimeSeries().containsKey(tick)) {
-////			System.out.println("Return without UPDATED");
+////			//System.out.println("Return without UPDATED");
 //			return;
 //		}else {
 //			timeSeriesLoadintoCell(cell);
@@ -77,7 +77,7 @@ public class CellCopasiStep {
 	}
 	
 	public static void callCellCopasi(Cell cell) {
-		//		System.out.println("INICIAL EN CALLCELL " + solCell);
+		//		//System.out.println("INICIAL EN CALLCELL " + solCell);
 		// Membrane and soluble metabolites are transformed from the area an volume units to mM.
 		// From my calculations (see Calculos), dividing these units by the area or the volume of the endosome, transform the 
 		//the values in mM.  Back from copasi, I recalculate the values to area and volume

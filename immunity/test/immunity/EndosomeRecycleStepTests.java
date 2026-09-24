@@ -54,7 +54,7 @@ public class EndosomeRecycleStepTests {
 	@Test
 	public void testRecycle() {
 //		ISchedule schedule = RunEnvironment.getInstance().getCurrentSchedule ();
-//		System.out.println("TEST  ADENTRO test 1 TEST  "+endosome.area);
+//		//System.out.println("TEST  ADENTRO test 1 TEST  "+endosome.area);
 		// this.endosome....
 
 		for (int i = 0; i<5; i++){

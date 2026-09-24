@@ -45,13 +45,13 @@ public class EndosomeMaturationStep {
 //		if(relativeRabA>0.9
 //				&& Math.random()< endosome.tickCount / 5000) mature(endosome);
 ////			endosome.tickCount+=1;
-//			//System.out.println("NOMBRE "+this.getName()+" Relative RabA  "+relativeRabA+" Cuenta  "+this.getTickCount());
+//			////System.out.println("NOMBRE "+this.getName()+" Relative RabA  "+relativeRabA+" Cuenta  "+this.getTickCount());
 		}
 
 	public static void mature (Endosome endosome, String rabOldName, String rabNewName, double propMature) {
-	//	System.out.println("MADUROOOOO");
-	//	System.out.println("NOMBRE "+ rabOldName+rabNewName+" Cuenta  "+endosome.getTickCount()+" Area  "+endosome.getArea());
-	//	System.out.println(endosome.getRabContent());
+	//	//System.out.println("MADUROOOOO");
+	//	//System.out.println("NOMBRE "+ rabOldName+rabNewName+" Cuenta  "+endosome.getTickCount()+" Area  "+endosome.getArea());
+	//	//System.out.println(endosome.getRabContent());
 		
 //		The logic is that a percentage (propMature) of the major domain matures
 //		the rest is preserved. The remaining domain can prevent miss targeting of membrane cargoes
@@ -66,7 +66,7 @@ public class EndosomeMaturationStep {
 //		maturation of the major domain.  This prevent that a small area maturation will reset the
 //		tickCount to zero
 		endosome.setTickCount((int) (endosome.tickCount*(1-propMature)));
-//		System.out.println(endosome.getRabContent());
+//		//System.out.println(endosome.getRabContent());
 	}
 	
 }

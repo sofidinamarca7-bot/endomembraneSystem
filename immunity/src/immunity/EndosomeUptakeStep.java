@@ -45,7 +45,7 @@ public class EndosomeUptakeStep {
 		Cell cell = Cell.getInstance();
 		HashMap<String, Double> totalRabs = new HashMap<String, Double>(Results.getInstance().getTotalRabs());
 		HashMap<String, Double> initialTotalRabs = new HashMap<String, Double>(Results.getInstance().getInitialTotalRabs());
-		//		System.out.println("totalRabs  "+totalRabs);
+		//		//System.out.println("totalRabs  "+totalRabs);
 
 		HashMap<String, Double> deltaRabs = new HashMap<String, Double>();  
 		HashMap<String, String> rabCode = new HashMap<String, String>();
@@ -56,12 +56,12 @@ public class EndosomeUptakeStep {
 		rabCode.put("RabE", "kind5");
 
 		for (String rab : totalRabs.keySet()){
-			//			System.out.println("ErrorRabs  "+ rab + "   " +initialTotalRabs.get(rab) +"     "+ totalRabs.get(rab));
+			//			//System.out.println("ErrorRabs  "+ rab + "   " +initialTotalRabs.get(rab) +"     "+ totalRabs.get(rab));
 			double value = initialTotalRabs.get(rab) - totalRabs.get(rab);
 			deltaRabs.put(rab, value);
 		}
 
-		//	System.out.println("Initial Rabs  "+ initialTotalRabs + " \n delta Rabs"+ deltaRabs);
+		//	//System.out.println("Initial Rabs  "+ initialTotalRabs + " \n delta Rabs"+ deltaRabs);
 		double largeDelta = 0d;
 		String selectedRab = "";
 		for (String rab : deltaRabs.keySet()){
@@ -70,7 +70,7 @@ public class EndosomeUptakeStep {
 				largeDelta=deltaRabs.get(rab);
 			}	
 		}
-		//		System.out.println("selected Rab for uptake "+ selectedRab);
+		//		//System.out.println("selected Rab for uptake "+ selectedRab);
 		//		If no rab was selected or the surface required is small (less than a sphere of 60 nm radius, 
 		//		no uptake is required
 		if (selectedRab.equals("")|| deltaRabs.get(selectedRab)<45000) return;
@@ -82,12 +82,12 @@ public class EndosomeUptakeStep {
 		
 	private static void newUptake(Endosome endosome, String selectedRab) {
 		double cellLimit = 3d * Cell.orgScale;
-		System.out.println("UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get("kind1"));
+		//System.out.println("UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get("kind1"));
 		HashMap<String, Double> initOrgProp = new HashMap<String, Double>(
 				InitialOrganelles.getInstance().getInitOrgProp().get("kind1"));
 		
-//		System.out.println("PROPIEDADES RAB A  "+initOrgProp);
-//		System.out.println("A VER?" + InitialOrganelles.getInstance().getInitOrgProp().get("kind2"));
+//		//System.out.println("PROPIEDADES RAB A  "+initOrgProp);
+//		//System.out.println("A VER?" + InitialOrganelles.getInstance().getInitOrgProp().get("kind2"));
 		HashMap<String, Double> rabCell = Cell.getInstance().getRabCell();
 
 		if (!rabCell.containsKey("RabA") || Math.random()>rabCell.get("RabA")){
@@ -118,7 +118,7 @@ public class EndosomeUptakeStep {
 		value = value + area;
 		Results.instance.getTotalRabs().put("RabA", value);
 		initOrgProp.put("volume", volume);
-//		System.out.println("PROPIEDADES RAB A  "+initOrgProp);
+//		//System.out.println("PROPIEDADES RAB A  "+initOrgProp);
 //		try {
 //			Thread.sleep(4000);
 //		} catch (InterruptedException e) {
@@ -151,7 +151,7 @@ public class EndosomeUptakeStep {
 			if (valueInTotal >= area) 	valueInTotal= area;
 			membraneContent.put(mem, valueInTotal);	
 		}
-//	System.out.println("RRRRRRRRRRRRRRRRRRRRRREEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSS "+ membraneContent);
+//	//System.out.println("RRRRRRRRRRRRRRRRRRRRRREEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSS "+ membraneContent);
 		HashMap<String, Double> solubleContent = new HashMap<String,Double>();
 		Set<String> solubleMet = new HashSet<String>(ModelProperties.getInstance().getSolubleMet());
 		for (String sol : solubleMet){
@@ -211,7 +211,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 	//				if (value > area) {value = area;}
 
 
-//		System.out.println("PLASMA MEMBRANE "+PlasmaMembrane.getInstance().getMembraneRecycle());
+//		//System.out.println("PLASMA MEMBRANE "+PlasmaMembrane.getInstance().getMembraneRecycle());
 
 		//			Cell.getInstance().settMembrane(tMembrane);
 
@@ -234,7 +234,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 		endosome.getSpace().moveTo(bud, rnd * 50, upPosition);
 		endosome.getGrid().moveTo(bud, (int) rnd * 50, (int) upPosition);
 		
-		//			System.out.println(area + "NEW UPTAKE" + bud.membraneContent);
+		//			//System.out.println(area + "NEW UPTAKE" + bud.membraneContent);
 		//			try {
 		//			TimeUnit.SECONDS.sleep(5);
 		//		} catch (InterruptedException e) {
@@ -247,7 +247,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 
 	private static void newOrganelle(Endosome endosome, String selectedRab, HashMap<String, String> rabCode) {
 		String kind = rabCode.get(selectedRab);
-		System.out.println(kind + " UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get(kind));
+		//System.out.println(kind + " UPTAKE INITIAL ORGANELLES " +	InitialOrganelles.getInstance().getInitOrgProp().get(kind));
 
 		HashMap<String, Double> initOrgProp = new HashMap<String, Double>(
 				InitialOrganelles.getInstance().getInitOrgProp().get(kind));
@@ -279,7 +279,7 @@ switched to Kind4(Rab7).  I guess is that the rate will have to be relative.  1 
 // membrane content associated to this rab/total area of the rab.  This is an average of the membrane content associated to the specific
 // Rab.  Marker is set to zero.
 		for (String mem : membraneMet){
-			//				System.out.println(mem + "  MMEEMM " + selectedRab + "\n " + Results.getInstance().getContentDist());
+			//				//System.out.println(mem + "  MMEEMM " + selectedRab + "\n " + Results.getInstance().getContentDist());
 			value = Results.getInstance().getContentDist().get(mem+selectedRab)
 					/Results.getInstance().getTotalRabs().get(selectedRab);
 			membraneContent.put(mem, value * area);

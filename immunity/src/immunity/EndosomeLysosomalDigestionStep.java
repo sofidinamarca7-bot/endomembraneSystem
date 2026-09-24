@@ -25,7 +25,7 @@ public class EndosomeLysosomalDigestionStep {
 			{			
 			squeezeOrganelle(endosome);
 			Endosome.endosomeShape(endosome);
-//			System.out.println(so/vo+" INICIAL "+so*so*so/(vo*vo)/(36*Math.PI) +" FINAL"+so/endosome.volume+endosome);
+//			//System.out.println(so/vo+" INICIAL "+so*so*so/(vo*vo)/(36*Math.PI) +" FINAL"+so/endosome.volume+endosome);
 			}
 
 	}
@@ -65,7 +65,7 @@ public class EndosomeLysosomalDigestionStep {
 //		RandomEngine engine = new DRand();
 //		Poisson poisson = new Poisson(2000, engine);
 //		int poissonObs = poisson.nextInt();
-//		System.out.println("                   POISSON DE 2000 "+poissonObs);
+//		//System.out.println("                   POISSON DE 2000 "+poissonObs);
 //		double finalvATPase = 0d;
 //		Internal vesicles are digested proportional to the RabD content and to the number of internal vesicles
 		if (endosome.solubleContent.containsKey("mvb")) {

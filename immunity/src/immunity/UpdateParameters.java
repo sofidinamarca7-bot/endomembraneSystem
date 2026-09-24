@@ -69,10 +69,10 @@ public class UpdateParameters {
 		String newFile = attr.lastModifiedTime().toString();
 		if (newFile.equals(oldFile)){return;}
 		else{
-//			System.out.println("newFile " + newFile+ "oldFile "+ oldFile);
-//			System.out.println("creationTime: " + attr.creationTime());
-//			System.out.println("lastAccessTime: " + attr.lastAccessTime());
-//			System.out.println("lastModifiedTime: " + attr.lastModifiedTime());
+//			//System.out.println("newFile " + newFile+ "oldFile "+ oldFile);
+//			//System.out.println("creationTime: " + attr.creationTime());
+//			//System.out.println("lastAccessTime: " + attr.lastAccessTime());
+//			//System.out.println("lastModifiedTime: " + attr.lastModifiedTime());
 			//Para no parameter, usar 
 //			Scanner scanner = new Scanner(new File(
 //					"inputIntrTransp3.csv"));
@@ -106,14 +106,14 @@ public class UpdateParameters {
 //				EndoplasmicReticulum.getInstance().getMembraneRecycle().putAll(modelProperties.getInitERmembraneRecycle());
 //				EndoplasmicReticulum.getInstance().getSolubleRecycle().putAll(modelProperties.getInitERsolubleRecycle());				
 
-//				System.out.println(PlasmaMembrane.getInstance().getMembraneRecycle());
-//				System.out.println(EndoplasmicReticulum.getInstance().getMembraneRecycle());
-//				System.out.println(modelProperties.rabCompatibility);
-//				System.out.println(modelProperties.membraneMet);
-//				System.out.println(modelProperties.solubleMet);
-//				System.out.println(modelProperties.tubuleTropism);
-//				System.out.println(modelProperties.rabTropism);
-//				System.out.println(modelProperties.mtTropism);
+//				//System.out.println(PlasmaMembrane.getInstance().getMembraneRecycle());
+//				//System.out.println(EndoplasmicReticulum.getInstance().getMembraneRecycle());
+//				//System.out.println(modelProperties.rabCompatibility);
+//				//System.out.println(modelProperties.membraneMet);
+//				//System.out.println(modelProperties.solubleMet);
+//				//System.out.println(modelProperties.tubuleTropism);
+//				//System.out.println(modelProperties.rabTropism);
+//				//System.out.println(modelProperties.mtTropism);
 				
 				
 
@@ -148,7 +148,7 @@ public class UpdateParameters {
 	private void testEvent() {
 		double tick = RunEnvironment.getInstance().getCurrentSchedule().getTickCount() - 1.0;
 // the schedule goes from 1 to 101, 201.  To fit the event tick, I subtract "1"
-//		System.out.println(tick + " EVENTOS " + ModelProperties.getInstance().getEvents());
+//		//System.out.println(tick + " EVENTOS " + ModelProperties.getInstance().getEvents());
 		if (ModelProperties.getInstance().getEvents().containsKey(tick)) {
 		File inputFile = new File(ModelProperties.getInstance().getEvents().get(tick));
 //		File file = new File("C:/Users/lmayo/workspace/immunity/inputIntrTransp3.csv");

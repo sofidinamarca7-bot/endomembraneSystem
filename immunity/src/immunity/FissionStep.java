@@ -54,13 +54,13 @@ public class FissionStep {
 		double vv = vo - vminCyl;
 		double ss = so - aminCyl;
 		if (ss * ss * ss / (vv * vv) <= 36.01 * PI){ 
-//			System.out.println("NO ALCANZA" + endosome.getRabContent());
+//			//System.out.println("NO ALCANZA" + endosome.getRabContent());
 			return;
 		} // organelle is an sphere
 // if s^3 / v^2 is equal to 36*PI then it is an sphere and cannot form a tubule
 // if the area and volume after budding a minimal tubule is	less than 36*PI, then cannot form a tubule	
 //		if (vo / (so - 2 * Math.PI * Cell.rcyl * Cell.rcyl) == Cell.rcyl / 2) {
-//			System.out.println("tubuleTubule" + vo + " " + so);
+//			//System.out.println("tubuleTubule" + vo + " " + so);
 //		}
 
 		double rsphere = Math.pow((vo * 3) / (4 * PI), (1 / 3d));// calculate
@@ -72,7 +72,7 @@ public class FissionStep {
 		if ((so - ssphere) < aminCyl){
 // if not enough surface to contain the volume plus a
 // minimum tubule, no split
-//			System.out.println("small tubule left " +so + "  " + ssphere + "  " + (so-ssphere));
+//			//System.out.println("small tubule left " +so + "  " + ssphere + "  " + (so-ssphere));
 			return; 
 		}
 
@@ -119,7 +119,7 @@ public class FissionStep {
 		 */
 		double vVesicle = vo - vcylinder;
 		if(vVesicle < 0 || vcylinder < 0){
-			System.out.println(vVesicle +"surface and volume"+ vcylinder);	
+			//System.out.println(vVesicle +"surface and volume"+ vcylinder);	
 		}
 		double sVesicle = so - scylinder;
 		/*
@@ -140,7 +140,7 @@ public class FissionStep {
 		if (rabLeft < 0) {
 			System.out.println(rabInTube + endosome.rabContent.get(rabInTube)
 					+ "surfaceCy" + scylinder);
-//			System.out.println(endosome.rabContent);
+//			//System.out.println(endosome.rabContent);
 		}
 		endosome.rabContent.put(rabInTube, rabLeft);
 		
@@ -180,7 +180,7 @@ public class FissionStep {
 		Context<Object> context = ContextUtils.getContext(endosome);
 		context.add(b);
 //		if (b.solubleContent.containsKey("ova")&& b.solubleContent.get("ova")>1000d){
-//			System.out.println("OVA EN TUBULE  " + b.solubleContent.get("ova") + "  " + endosome.solubleContent.get("ova"));
+//			//System.out.println("OVA EN TUBULE  " + b.solubleContent.get("ova") + "  " + endosome.solubleContent.get("ova"));
 //		
 //		try {
 //		TimeUnit.SECONDS.sleep(5);
@@ -206,7 +206,7 @@ public class FissionStep {
 //		The tickCount is reset to a certain value considering the the proportion of the 
 //		area of the newly formed organelle.  Did not like it.  Better keep the same tickCount
 		b.tickCount = endosome.tickCount;//1 + (int) (endosome.tickCount * b.area/(endosome.area + b.area));
-//		if (b.getRabContent().containsKey("RabH"))System.out.println(b.area + "  "+b.tickCount +" TICKCOUNT RABH "+endosome.tickCount+ " "+endosome.area);
+//		if (b.getRabContent().containsKey("RabH"))//System.out.println(b.area + "  "+b.tickCount +" TICKCOUNT RABH "+endosome.tickCount+ " "+endosome.area);
 		// change the													// heading
 		// of the old vesicle heading with a normal distribution
 //		scale 1500 nm is the 50 size space. Size in nm/30 is the size in the space scale
@@ -286,9 +286,9 @@ public class FissionStep {
 				// add a minimal volume
 				double aradius =Math.sqrt(vcylinder /(2*PI*rcyl)); // from vcylinder = PI*aradius^2 * cistern height (2 rcyl)
 				scylinder = 2*PI*aradius*aradius + 4*PI*aradius*rcyl;//from Scyl = 2*PI*aradius^2+4*PI*aradius*rcyl
-				//System.out.println("SPLIT CISTERN vo"+vo+"  so  "+so+"  vcylinder "+vcylinder+"  scylinder "+ scylinder);
+				////System.out.println("SPLIT CISTERN vo"+vo+"  so  "+so+"  vcylinder "+vcylinder+"  scylinder "+ scylinder);
 
-				// System.out.println(scylinder +"surface and volume"+ vcylinder);
+				// //System.out.println(scylinder +"surface and volume"+ vcylinder);
 			}
 			while (
 					(so - ssphere - scylinder > 4 * PI * Math.pow(rcyl, 2))
@@ -317,7 +317,7 @@ public class FissionStep {
 			////			    root2 = (-b - Math.sqrt(d))/(2*a);
 			////			    VOLUME
 			//				double volume = Math.PI*root1*root1*2*Cell.rcyl;
-			//System.out.println("SPLIT CISTERN vo "+ vo +"  so  "+so+"  vcylinder "+vcylinder+"  scylinder "+ scylinder);
+			////System.out.println("SPLIT CISTERN vo "+ vo +"  so  "+so+"  vcylinder "+vcylinder+"  scylinder "+ scylinder);
 			return new double[] {scylinder, vcylinder};		
 		}
 	}
@@ -346,7 +346,7 @@ public class FissionStep {
 				vcylinder = endosome.volume/2;
 				scylinder = endosome.area/2;
 
-//				System.out.println("tubule cut in two");
+//				//System.out.println("tubule cut in two");
 				return new double[] {scylinder, vcylinder};
 			}
 			else {
@@ -402,7 +402,7 @@ public class FissionStep {
 				// the mincyl
 				vcylinder = vcylinder + vminCyl;
 				// add a volume
-				// System.out.println(scylinder +"surface and volume"+ vcylinder);
+				// //System.out.println(scylinder +"surface and volume"+ vcylinder);
 			}
 			return new double[] {scylinder, vcylinder};	
 		}
@@ -443,7 +443,7 @@ public class FissionStep {
 					if (endosome.rabContent.containsKey(rab)){
 						sphereTrop = sphereTrop + endosome.rabContent.get(rab)/endosome.area*
 								Integer.parseInt(rabTrop.substring(4, 6));
-//						System.out.println("Trop Number " + Integer.parseInt(rabTrop.substring(4, 6)));
+//						//System.out.println("Trop Number " + Integer.parseInt(rabTrop.substring(4, 6)));
 					}
 			}
 // the tropism to the tubule is directly the two digits of the Rab selected for the tubule 
@@ -455,7 +455,7 @@ public class FissionStep {
 					tubuleTrop = Integer.parseInt(rabTrop.substring(4, 6));
 				}
 			}
-//			System.out.println("sphere tubule " + sphereTrop +" "+ tubuleTrop+ " " +(tubuleTrop-sphereTrop));
+//			//System.out.println("sphere tubule " + sphereTrop +" "+ tubuleTrop+ " " +(tubuleTrop-sphereTrop));
 // OLD COMMENTED the tropismo is to vesicle or to tubule according to the following rules
 
 // NEW 23/7/2021 if no tropism, (totaltrop = 0) proportional to surface
@@ -473,7 +473,7 @@ public class FissionStep {
 // Hence, a new totalTropism needs to be calculated	
 			totalTrop = sVesicle * (sphereTrop + 0.01) + (so-sVesicle)* (tubuleTrop + 0.01);
 			double proportionVesicle = sVesicle * (sphereTrop + 0.01)/ totalTrop;
-//			System.out.println(content + " FISSION " + sphereTrop +" FISSION " + tubuleTrop +" FISSION " + totalTrop +" FISSION " + proportionVesicle);
+//			//System.out.println(content + " FISSION " + sphereTrop +" FISSION " + tubuleTrop +" FISSION " + totalTrop +" FISSION " + proportionVesicle);
 	//		if (proportionVesicle * content >= sVesicle) {}
 			splitPropSurfaceAndTropism(endosome, content, so, sVesicle, proportionVesicle);
 			}
@@ -481,24 +481,24 @@ public class FissionStep {
  * // if not clear tropism to tubule or sphere, even distribution				
 			if (tubuleTrop < 2d && sphereTrop < 2d ) 
 				{	
-//				System.out.println("to even ");
+//				//System.out.println("to even ");
 				splitPropSurface(endosome, content, so, sVesicle);	
 				}
 //	if the difference tubule-sphere is larger than 4 and sphere less than 2, to tubule		
 			else if (sphereTrop < 2d || (tubuleTrop-sphereTrop) > 4d)
 				{
-//				System.out.println("to tubule ");
+//				//System.out.println("to tubule ");
 				splitToTubule(endosome, content, so, sVesicle);
 				}
 //	if the difference tubule-sphere is less than -4 and tubule less than 2, to vesicle			
 			else if (tubuleTrop < 2d || (tubuleTrop-sphereTrop) < -4d)
 				{
-//				System.out.println("to sphere ");
+//				//System.out.println("to sphere ");
 				splitToSphere(endosome, content, so, sVesicle);
 				}
 //	if no clear differences, even distribution	
 			else { 
-//				System.out.println("to even even ");
+//				//System.out.println("to even even ");
 				splitPropSurface(endosome, content, so, sVesicle);}
 			}
 
@@ -674,21 +674,21 @@ public class FissionStep {
 				endosome.rabContent);
 		// copyMap.putAll(endosome.rabContent);
 		String rab = null;
-		// System.out.println("CopyMap "+copyMap);
+		// //System.out.println("CopyMap "+copyMap);
 		for (String rab1 : endosome.rabContent.keySet()) {
 			if (copyMap.get(rab1) < aminCyl) {
 				copyMap.remove(rab1);
 			}
 		}
 		if (copyMap.isEmpty()) {
-			System.out.println("NINGUN RAB " + copyMap);
+			//System.out.println("NINGUN RAB " + copyMap);
 			return null;
 		}
 
 		if (copyMap.size() < 2) {
 
 			for (String rab1 : copyMap.keySet()) {
-//				System.out.println("UNICO RAB " + copyMap);
+//				//System.out.println("UNICO RAB " + copyMap);
 				return rab1;
 			}
 		}
@@ -715,7 +715,7 @@ public class FissionStep {
 				for (String rab1 : keys){
 				tubuleTropism = tubuleTropism + ModelProperties.getInstance().getTubuleTropism().get(rab1);
 					if (rnd <= tubuleTropism){
-//						System.out.println(copyMap + " RabInTubeSelected " + rab1);
+//						//System.out.println(copyMap + " RabInTubeSelected " + rab1);
 						return rab1;
 					}
 				}
@@ -730,9 +730,9 @@ public class FissionStep {
 //			Collections.shuffle(keys);
 //			while (rab == null) {
 //				for (Object rab1 : keys) {
-////					System.out.println(rab1 + " "+ tubuleTropism);
+////					//System.out.println(rab1 + " "+ tubuleTropism);
 //					if (Math.random() < ModelProperties.getInstance().getTubuleTropism().get(rab1)) {
-//						System.out.println(copyMap + "RabInTubeSelected" + rab1);
+//						//System.out.println(copyMap + "RabInTubeSelected" + rab1);
 //						return (String) rab1;
 //					}
 //				}

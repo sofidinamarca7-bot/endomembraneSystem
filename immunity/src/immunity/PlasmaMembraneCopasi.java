@@ -46,7 +46,7 @@ public class PlasmaMembraneCopasi {
 	
 	protected PlasmaMembraneCopasi() {
 
-		System.out.println("Instantiation Once");
+		//System.out.println("Instantiation Once");
 		
 		// to defeat instantiation
 		assert CCopasiRootContainer.getRoot() != null;
@@ -69,30 +69,30 @@ public class PlasmaMembraneCopasi {
         
         model = dataModel.getModel();
         assert model != null;
-        System.out.println("Model statistics for model \"" + model.getObjectName() + "\".");
+        //System.out.println("Model statistics for model \"" + model.getObjectName() + "\".");
         
      // output number and names of all compartments
         int i, iMax = (int)model.getCompartments().size();
-        System.out.println("Number of Compartments: " + (new Integer(iMax)).toString());
-        System.out.println("Compartments: ");
+        //System.out.println("Number of Compartments: " + (new Integer(iMax)).toString());
+        //System.out.println("Compartments: ");
         for (i = 0;i < iMax;++i)
         {
             CCompartment compartment = model.getCompartment(i);
             assert compartment != null;
 //
-//            System.out.println("compartimiento volumen \t" + compartment.getObjectName() + model.getCompartment(i).getInitialValue());
+//            //System.out.println("compartimiento volumen \t" + compartment.getObjectName() + model.getCompartment(i).getInitialValue());
         }
 
         // output number and names of all metabolites
         iMax = (int)model.getMetabolites().size();
-        System.out.println("Number of Metabolites: " + (new Integer(iMax)).toString());
-        System.out.println("Metabolites: ");
+        //System.out.println("Number of Metabolites: " + (new Integer(iMax)).toString());
+        //System.out.println("Metabolites: ");
         for (i = 0;i < iMax;++i)
         {
             CMetab metab = model.getMetabolite(i);
             assert metab != null;
             nameMetabs.put(metab.getObjectName(), metab);
-            System.out.println(metab.getObjectName());
+            //System.out.println(metab.getObjectName());
         }
         // SET INITIAL CONCENTRATIONS
         // SET INITIAL CONCENTRATIONS
@@ -104,18 +104,18 @@ public class PlasmaMembraneCopasi {
         
         for (String s : nameMetabs.keySet()) {
         	CMetab metab = nameMetabs.get(s);
-        	System.out.println("\t" + metab.getObjectName() + "\t" + metab.getInitialConcentration() + "\t" + metab.getInitialValue());
+        	//System.out.println("\t" + metab.getObjectName() + "\t" + metab.getInitialConcentration() + "\t" + metab.getInitialValue());
         }
 
         // output number and names of all reactions
         iMax = (int)model.getReactions().size();
-        System.out.println("Number of Reactions: " + (new Integer(iMax)).toString());
-        System.out.println("Reactions: ");
+        //System.out.println("Number of Reactions: " + (new Integer(iMax)).toString());
+        //System.out.println("Reactions: ");
         for (i = 0;i < iMax;++i)
         {
             CReaction reaction = model.getReaction(i);
             assert reaction != null;
-            System.out.println("\t" + reaction.getObjectName());
+            //System.out.println("\t" + reaction.getObjectName());
         }
         
         setUpReport();
@@ -232,7 +232,7 @@ public class PlasmaMembraneCopasi {
 	
 	public void setInitialConcentration(String name, double value) {
 		if (!nameMetabs.containsKey(name)) {
-			System.out.println(name + "\t does not exist as a metab");
+			//System.out.println(name + "\t does not exist as a metab");
 		} else {
 			CMetab m = nameMetabs.get(name);
 			m.setInitialConcentration(value);
@@ -244,14 +244,14 @@ public class PlasmaMembraneCopasi {
 		// reapply the initial values
 		model.applyInitialValues();
 		
-/*        System.out.println("Starting ...");
+/*        //System.out.println("Starting ...");
         
         for (int i = 0; i < (int) model.getMetabolites().size(); ++i)
         {
             CMetab metab = model.getMetabolite(i);
             assert metab != null;
             
-            System.out.println(metab.getObjectName() + " : " + metab.getConcentration());
+            //System.out.println(metab.getObjectName() + " : " + metab.getConcentration());
         }*/
 		
 		boolean result=true;
@@ -260,7 +260,7 @@ public class PlasmaMembraneCopasi {
 		try
         {
             // now we run the actual trajectory
-        	System.out.println("trajectoryTask.process AchReceptor");
+        	//System.out.println("trajectoryTask.process AchReceptor");
             result=trajectoryTask.process(true);
             processError = trajectoryTask.getProcessError();
             processWarning = trajectoryTask.getProcessWarning();
@@ -268,8 +268,8 @@ public class PlasmaMembraneCopasi {
         catch (java.lang.Exception ex)
         {
             System.err.println( "Error. Running the time course simulation failed." );
-            System.out.println(processError);
-            System.out.println(processWarning);
+            //System.out.println(processError);
+            //System.out.println(processWarning);
             // check if there are additional error messages
             if (CCopasiMessage.size() > 0)
             {
@@ -281,8 +281,8 @@ public class PlasmaMembraneCopasi {
         if(result==false)
         {
             System.err.println( "An error occured while running the time course simulation." );
-            System.out.println(processError);
-            System.out.println(processWarning);
+            //System.out.println(processError);
+            //System.out.println(processWarning);
             // check if there are additional error messages
             if (CCopasiMessage.size() > 0)
             {
@@ -297,10 +297,10 @@ public class PlasmaMembraneCopasi {
         // we simulated 100 steps, including the initial state, this should be
         // 101 step in the timeseries
         assert timeSeries.getRecordedSteps() == stepNumber + 1;
-//        System.out.println( "The time series consists of " + (new Long(timeSeries.getRecordedSteps())).toString() + "." );
-//        System.out.println( "Each step contains " + (new Long(timeSeries.getNumVariables())).toString() + " variables." );
-//        System.out.println( "The final state is: " );
-//        System.out.println( "time series"+ timeSeries.toString());
+//        //System.out.println( "The time series consists of " + (new Long(timeSeries.getRecordedSteps())).toString() + "." );
+//        //System.out.println( "Each step contains " + (new Long(timeSeries.getNumVariables())).toString() + " variables." );
+//        //System.out.println( "The final state is: " );
+//        //System.out.println( "time series"+ timeSeries.toString());
         
         int iMax = (int)timeSeries.getNumVariables();
         int lastIndex = (int)timeSeries.getRecordedSteps() - 1;
@@ -309,14 +309,14 @@ public class PlasmaMembraneCopasi {
             // here we get the particle number (at least for the species)
             // the unit of the other variables may not be particle numbers
             // the concentration data can be acquired with getConcentrationData
-//            System.out.println("\n"+ timeSeries.getTitle(i) + ": ");
+//            //System.out.println("\n"+ timeSeries.getTitle(i) + ": ");
         	for (int j =0; j <= lastIndex; j = j +1 ){
         	
 //            System.out.print(timeSeries.getConcentrationData(j, i)+ "PRUEBA ");
         	}
         }
         
-//        System.out.println("Ending ...");
+//        //System.out.println("Ending ...");
         
         for (int i = 0; i < (int) model.getMetabolites().size(); ++i)
         {
@@ -324,7 +324,7 @@ public class PlasmaMembraneCopasi {
             assert metab != null;  
   //          if (((Double) metab.getConcentration()).isNaN())
             
- //           System.out.println(metab.getObjectName() + ": initial " + metab.getInitialConcentration()+" final "+metab.getConcentration());
+ //           //System.out.println(metab.getObjectName() + ": initial " + metab.getInitialConcentration()+" final "+metab.getConcentration());
         }
 
 	}
@@ -335,13 +335,13 @@ public class PlasmaMembraneCopasi {
 		double d = 0.0;
 		
 		if (!nameMetabs.containsKey(name)) {
-			System.out.println(name + "\t does not exist as a metab");
+			//System.out.println(name + "\t does not exist as a metab");
 		} else {
 			CMetab m = nameMetabs.get(name);
 			d = m.getConcentration();
 //			if (d.isNaN()) d= 0.0;
 		}
-//		System.out.println("FINAL ANTPR       "+ name + d);
+//		//System.out.println("FINAL ANTPR       "+ name + d);
 		return d;
 	}
 	public Set<String> getMetabolites(){

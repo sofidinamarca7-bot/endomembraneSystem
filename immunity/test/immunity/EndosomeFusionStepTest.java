@@ -41,7 +41,7 @@ public class EndosomeFusionStepTest {
 	@Test
 	public void testFusion() {
 //		ISchedule schedule = RunEnvironment.getInstance().getCurrentSchedule ();
-//		System.out.println("TEST  ADENTRO test 1 TEST  "+endosome.area);
+//		//System.out.println("TEST  ADENTRO test 1 TEST  "+endosome.area);
 		// this.endosome....
 		this.endosome.rabContent.clear();
 		this.endosome.rabContent.put("RabD", 50026.548);

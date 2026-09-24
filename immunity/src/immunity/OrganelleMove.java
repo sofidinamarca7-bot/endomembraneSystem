@@ -22,7 +22,7 @@ public class OrganelleMove {
 		if ( endosome.area >= Cell.minCistern/20// minimal cistern Golgi absolute Scale hacer constante
 				&& isGolgi(endosome))
 		{ // test if it is Golgi
-//			System.out.println(endosome.heading + " INITIAL HEADING");
+//			//System.out.println(endosome.heading + " INITIAL HEADING");
 //			endosome.heading = -90;
 			moveCistern(endosome);
 		}
@@ -55,7 +55,7 @@ public class OrganelleMove {
 		double between = 4*scale;//distance between cisterna Math.random();
 		double high = 10;//distance from the bottom
 //		endosome.setHeading(-90d);// = -90d;			
-//		System.out.println(endosome.heading + " final HEADING");
+//		//System.out.println(endosome.heading + " final HEADING");
 		
 		if (organelleName.contains("cisGolgi")) {
 			space.moveTo(endosome, 25, between*1+high);
@@ -216,7 +216,7 @@ public class OrganelleMove {
 				rabDir = mtDirection(endosome);
 				if (isTubule)
 					{
-//					System.out.println("IS TUBULE"+ rabDir);
+//					//System.out.println("IS TUBULE"+ rabDir);
 					mtDir = ModelProperties.getInstance().mtTropismTubule.get(rabDir);
 					if (Math.random()<Math.abs(mtDir)) {
 //+1 means to plus endo of MT (to PM); -1 means to the minus end of MT (to nucleus)
@@ -230,7 +230,7 @@ public class OrganelleMove {
 				else
 					{
 					mtDir = ModelProperties.getInstance().mtTropismRest.get(rabDir);
-//					System.out.println("IS NOT TUBULE"+ mtDir);
+//					//System.out.println("IS NOT TUBULE"+ mtDir);
 					if (Math.random()< Math.abs(mtDir)) {
 // 0 means to plus end of MT (to PM); +1 means to the minus end of MT (to nucleus)
 						if (Math.signum(mtDir)>=0) {mtDir = 0;} else {mtDir = 1;}

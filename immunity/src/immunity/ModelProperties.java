@@ -146,11 +146,11 @@ public class ModelProperties {
 		return rabSet;
 	}
 	public HashMap<String, Double> getSolubleCell() {
-//		System.out.println("DEVUELVE SOLUBLE CELL " + solubleCell);
+//		//System.out.println("DEVUELVE SOLUBLE CELL " + solubleCell);
 		return solubleCell;
 	}
 	public HashMap<String, Double> getMembraneCell() {
-//		System.out.println("DEVUELVE SOLUBLE CELL " + solubleCell);
+//		//System.out.println("DEVUELVE SOLUBLE CELL " + solubleCell);
 		return solubleCell;
 	}
 	public HashMap<String, Double> getInitPMmembraneRecycle() {
@@ -194,7 +194,7 @@ public class ModelProperties {
 			case "cellK": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getCellK().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getCellK());
+//				//System.out.println(modelProperties.getCellK());
 				}
 				
 				break;
@@ -202,7 +202,7 @@ public class ModelProperties {
 			case "actionProbabilities": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getActionProbabilities().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println("actionProbabilities" + modelProperties.getActionProbabilities());
+//				//System.out.println("actionProbabilities" + modelProperties.getActionProbabilities());
 				}
 				
 				break;
@@ -211,7 +211,7 @@ public class ModelProperties {
 			case "cellAgentProperties": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getCellAgentProperties().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getCellK());
+//				//System.out.println(modelProperties.getCellK());
 				}
 				
 				break;
@@ -219,7 +219,7 @@ public class ModelProperties {
 			case "plasmaMembraneProperties": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getPlasmaMembraneProperties().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getCellK());
+//				//System.out.println(modelProperties.getCellK());
 				}
 				
 				break;
@@ -227,7 +227,7 @@ public class ModelProperties {
 			case "endoplasmicReticulumProperties": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getEndoplasmicReticulumProperties().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getEndoplasmicReticulumProperties());
+//				//System.out.println(modelProperties.getEndoplasmicReticulumProperties());
 				}
 				
 				break;
@@ -240,20 +240,20 @@ public class ModelProperties {
 			case "initRabCell": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getInitRabCell().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getInitRabCell());
+//				//System.out.println(modelProperties.getInitRabCell());
 				}
 				break;
 			}
 			case "initPMmembraneRecycle": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getInitPMmembraneRecycle().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getMembraneRecycle());
+//				//System.out.println(modelProperties.getMembraneRecycle());
 				}
 				break;
 			}
 			case "initPMsolubleRecycle": {
 				for (int i = 1; i < b.length; i = i + 2) {
-				System.out.println(b[i] + b[i+1]);
+				//System.out.println(b[i] + b[i+1]);
 				modelProperties.getInitPMsolubleRecycle().put(b[i], Double.parseDouble(b[i+1]));
 
 				}
@@ -262,42 +262,42 @@ public class ModelProperties {
 			case "initERmembraneRecycle": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getInitERmembraneRecycle().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getMembraneRecycle());getInitERmembraneRecycle
+//				//System.out.println(modelProperties.getMembraneRecycle());getInitERmembraneRecycle
 				}
 				break;
 			}
 			case "initERsolubleRecycle": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getInitERsolubleRecycle().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getMembraneRecycle());
+//				//System.out.println(modelProperties.getMembraneRecycle());
 				}
 				break;
 			}
 			case "solubleCell": {
 				for (int i = 1; i < b.length; i = i + 2) {
 				modelProperties.getSolubleCell().put(b[i], Double.parseDouble(b[i+1]));
-//				System.out.println(modelProperties.getSolubleCell());
+//				//System.out.println(modelProperties.getSolubleCell());
 				}
 				break;
 			}
 			case "rabCompatibility": {
 				for (int i = 1; i < b.length; i = i + 2) {
 					modelProperties.getRabCompatibility().put(b[i], Double.parseDouble(b[i+1]));
-					//System.out.println(modelProperties.getRabCompatibility());
+					////System.out.println(modelProperties.getRabCompatibility());
 					}
 				break;
 			}
 			case "tubuleTropism": {
 				for (int i = 1; i < b.length; i = i + 2) {
 					modelProperties.getTubuleTropism().put(b[i], Double.parseDouble(b[i+1]));
-					//System.out.println(modelProperties.getTubuleTropism()); 
+					////System.out.println(modelProperties.getTubuleTropism()); 
 					}
 				break;
 			}
 			case "rabTropism": {
 				Set<String> rabT = new HashSet<String>();
 				for (int i = 2; i < b.length; i++) {
-					//System.out.println(b[i]);
+					////System.out.println(b[i]);
 					if (b[i].length()>0) {
 						rabT.add(b[i]);
 					}
@@ -308,14 +308,14 @@ public class ModelProperties {
 			case "mtTropismTubule": {
 				for (int i = 1; i < b.length; i = i + 2) {
 					modelProperties.getMtTropismTubule().put(b[i], Double.parseDouble(b[i+1]));
-					//System.out.println(modelProperties.getMtTropism());
+					////System.out.println(modelProperties.getMtTropism());
 					}
 				break;
 			}
 			case "mtTropismRest": {
 				for (int i = 1; i < b.length; i = i + 2) {
 					modelProperties.getMtTropismRest().put(b[i], Double.parseDouble(b[i+1]));
-					//System.out.println(modelProperties.getMtTropism());
+					////System.out.println(modelProperties.getMtTropism());
 					}
 				break;
 			}
@@ -418,20 +418,20 @@ public class ModelProperties {
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					inOr.getInitSolubleContent().put(b[0], value);
-					System.out.println("Proton is there?" + inOr.getInitialSolubleContent());
+					//System.out.println("Proton is there?" + inOr.getInitialSolubleContent());
 					break;
 				}
 				case "initMembraneContent": {
 					HashMap<String, Double> value = new HashMap<String, Double>();
 					for (int i = 2; i < b.length; i = i + 2) {
-//					System.out.println("VALOR MALO" + b[i] + "" + b[i+1]);
+//					//System.out.println("VALOR MALO" + b[i] + "" + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					inOr.getInitMembraneContent().put(b[0], value);
 					break;
 				}
 				default: {
-					System.out.println("no a valid entry");
+					//System.out.println("no a valid entry");
 				}
 				}
 				break;
@@ -446,7 +446,7 @@ public class ModelProperties {
 		}
 
 			default: {
-				System.out.println("no a valid entry");
+				//System.out.println("no a valid entry");
 			}
 			}
 
@@ -504,20 +504,20 @@ public class ModelProperties {
 							value.put(b[i], Double.parseDouble(b[i + 1]));
 						}
 						inOr.getInitSolubleContent().put(b[0], value);
-						//						System.out.println("Proton is there?" + inOr.getInitialSolubleContent());
+						//						//System.out.println("Proton is there?" + inOr.getInitialSolubleContent());
 						break;
 					}
 					case "initMembraneContent": {
 						HashMap<String, Double> value = new HashMap<String, Double>();
 						for (int i = 2; i < b.length; i = i + 2) {
-							//						System.out.println("VALOR MALO" + b[i] + "" + b[i+1]);
+							//						//System.out.println("VALOR MALO" + b[i] + "" + b[i+1]);
 							value.put(b[i], Double.parseDouble(b[i + 1]));
 						}
 						inOr.getInitMembraneContent().put(b[0], value);
 						break;
 					}
 					default: {
-						System.out.println("no a valid entry");
+						//System.out.println("no a valid entry");
 					}
 					}
 					break;
@@ -525,11 +525,11 @@ public class ModelProperties {
 
 
 				default: {
-					System.out.println("no a valid entry");
+					//System.out.println("no a valid entry");
 				}
 
 				}
 			}
-			System.out.println("  FREEZE DRY INITIAL ORGANELLES FOR UPTAKE " + InitialOrganelles.getInstance().initOrgProp);
+			//System.out.println("  FREEZE DRY INITIAL ORGANELLES FOR UPTAKE " + InitialOrganelles.getInstance().initOrgProp);
 	}
 }

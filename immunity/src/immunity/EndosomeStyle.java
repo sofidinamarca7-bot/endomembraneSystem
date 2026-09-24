@@ -54,8 +54,8 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 //		a=2/(svratio-1/c);//from s/v ratio
 //		c= v*3/(4*Math.PI*a*a);//from v ellypsoid
 //		}
-//		System.out.println("area  "+ s+" volume   " + v);
-//		System.out.println("a "+a+ " c "+c+" areaE  "+ (2*Math.PI*a*a+2*a*Math.PI*2*c)*.666+" volumeE   " + 4d/3d*Math.PI*a*a*c);
+//		//System.out.println("area  "+ s+" volume   " + v);
+//		//System.out.println("a "+a+ " c "+c+" areaE  "+ (2*Math.PI*a*a+2*a*Math.PI*2*c)*.666+" volumeE   " + 4d/3d*Math.PI*a*a*c);
 //		PLOT as ellipses with a length/wide ratio depending on the area/volume
 //		ratio of the endosome.  It is 1 (sphere) when the area is what you need to
 //		cover a sphere with the volume of the endosome
@@ -79,7 +79,7 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
         }
         else{
 //        	object.heading = -90;
-//  		System.out.println("a  "+a+"  c  "+ c);
+//  		//System.out.println("a  "+a+"  c  "+ c);
          Shape rec = new RoundRectangle2D.Double(-c/2, -a/2, c, a,  0, 0);
 //        arguments x, y, ancho, largo, corner angle (small sharp), side curvature (small, straight)
         shape = this.factory.createShape(rec);
@@ -87,7 +87,7 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 //		else{
 //		shape = this.factory.createRectangle((int) (v/Math.PI/100),5);	
 //		}
-//		System.out.println("a  "+a1+"svr  "+svr);
+//		//System.out.println("a  "+a1+"svr  "+svr);
 /*//       PLOT as a sphere plus a tubule
 		Shape sphere = new Ellipse2D.Double(0, 0, rsphere, rsphere);
 		double areaTubule = s - 4*Math.PI*rsphere*rsphere;
@@ -96,7 +96,7 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 		
 		double tubLength = (areaTubule-Math.PI*100d)/(2*Math.PI*10);
         Shape tubule = new Rectangle.Double(rsphere-2,rsphere/2-5,tubLength,10);
-		System.out.println("SPHERE"+rsphere+"TUBULE"+tubLength);
+		//System.out.println("SPHERE"+rsphere+"TUBULE"+tubLength);
 	    Area area = new Area(sphere);
 	    Area a2 = new Area(tubule);
 	    area.add(a2);
@@ -115,18 +115,18 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 		// color code for contents
 		double red = object.getRed();
 		if (red>1) {
-	//		System.out.println("RED FUERA ESCALA "+red);
+	//		//System.out.println("RED FUERA ESCALA "+red);
 			red=1; 
 		}
 		double green = object.getGreen()*0.068*1E9/3;
-//		System.out.println("GREEN FUERA ESCALA "+green);
+//		//System.out.println("GREEN FUERA ESCALA "+green);
 		if (green>1) {
-		System.out.println("GREEN FUERA ESCALA "+green);
+		//System.out.println("GREEN FUERA ESCALA "+green);
 			green=1; 
 		}
 		double blue = object.getBlue();
 		if (blue>1) {
-		//	System.out.println("BLUE FUERA ESCALA "+blue);
+		//	//System.out.println("BLUE FUERA ESCALA "+blue);
 			blue=1; 
 		}
 		ArrayList<Double> colors = new ArrayList<Double>();
@@ -135,7 +135,7 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 		colors.add(blue);
 		// (1 - max (list g r b)) ;
 		Double corr = 1 - Collections.max(colors);
-		if (Collections.max(colors)>1.1) System.out.println("COLOR FUERA ESCALA "+red+"  "+green+"  "+blue);
+		if (Collections.max(colors)>1.1) //System.out.println("COLOR FUERA ESCALA "+red+"  "+green+"  "+blue);
 //		if the content in the organelle is not represented, then light gray
 		if (corr > 0.95) corr = 0.95;
 		return new Color((int) ((red + corr) * 255),
@@ -198,7 +198,7 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 			// 		(1 - max (list g r b)) ;
 			Double corr = 1d - Collections.max(colors);
 			if (corr <0) {
-				System.out.println("BORDER COLOR" + colors);
+				//System.out.println("BORDER COLOR" + colors);
 			}
 
 			//		if the rab in the organelle is not represented, then dark gray
@@ -223,7 +223,7 @@ public class EndosomeStyle implements StyleOGL2D<Endosome> {
 
 				}
 			}
-			//			System.out.println(rabColor+rabContent);
+			//			//System.out.println(rabColor+rabContent);
 			if (rabColor.equals("RabA"))	return new Color (0,0,255);//EE
 			else if (rabColor.equals("RabB"))	return new Color (0,255,255);//SE
 			else if (rabColor.equals("RabC"))	return new Color (0,255,0);//RE

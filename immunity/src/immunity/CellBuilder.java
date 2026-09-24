@@ -74,7 +74,7 @@ public class CellBuilder implements ContextBuilder<Object> { // contextbuilder e
 		
 //  introduce the agents in the space
 		
-//		System.out.println(" builder CellProperties cargado");
+//		//System.out.println(" builder CellProperties cargado");
 //			context.add(ModelProperties);	
 		//Cell cell = Cell.getInstance();
 		context.add(new Cell(space, grid));
@@ -185,14 +185,14 @@ public class CellBuilder implements ContextBuilder<Object> { // contextbuilder e
 //						end.setName(kind+" "+Integer.toString(ite)) ;
 						context.add(end);
 						Endosome.endosomeShape(end);
-						//System.out.println(end.getName()+ " " +membraneContent + " " + solubleContent + " " + rabContent+" " + initOrgProp);				
+						////System.out.println(end.getName()+ " " +membraneContent + " " + solubleContent + " " + rabContent+" " + initOrgProp);				
 				}
 			}
 		}
 		else {
 //			if endosomes are loadaed from a freezeDry csv file
 //			CellProperties.getInstance().getCellK().get("freezeDry").equals(1d)
-//			System.out.println("FREEZE DRY METHOD   "+diffOrganelles);
+//			//System.out.println("FREEZE DRY METHOD   "+diffOrganelles);
 			for (String kind : diffOrganelles){
 				if (kind.substring(0,2).equals("ki")) continue;
 				
@@ -200,7 +200,7 @@ public class CellBuilder implements ContextBuilder<Object> { // contextbuilder e
 				HashMap<String, Double> rabContent = new HashMap<String, Double>(InitialOrganelles.getInstance().getInitRabContent().get(kind));
 				HashMap<String, Double> membraneContent = new HashMap<String, Double>(InitialOrganelles.getInstance().getInitMembraneContent().get(kind));
 				HashMap<String, Double> solubleContent = new HashMap<String, Double>(InitialOrganelles.getInstance().getInitSolubleContent().get(kind));
-//				System.out.println(kind + membraneContent + " " + solubleContent + " " + rabContent+" " + initOrgProp);
+//				//System.out.println(kind + membraneContent + " " + solubleContent + " " + rabContent+" " + initOrgProp);
 						Endosome end = new Endosome(space, grid, rabContent, membraneContent,
 													solubleContent, initOrgProp);
 						context.add(end);
@@ -277,10 +277,10 @@ public class CellBuilder implements ContextBuilder<Object> { // contextbuilder e
 //					}
 			}
 		}
-
-		
+		////System.out.println("JAVA LIBRARY PATH:");
+		////System.out.println(System.getProperty("java.library.path"));
 		if (RunEnvironment.getInstance().isBatch()) {
-			RunEnvironment.getInstance().endAt(120100);
+			RunEnvironment.getInstance().endAt(180000);
 		}
 
 		collection = context.getObjects(Endosome.class);// se guardan los objetos de la clase endosoma, supongo que seran endosomas

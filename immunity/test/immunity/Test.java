@@ -11,14 +11,14 @@ public class Test {
 		map.put("rabA", 123);
 		
 		for(String item : map.keySet()) {
-			System.out.println(item);
+			//System.out.println(item);
 		}
 		for(Entry<String, Integer> item2: map.entrySet()) {
-			System.out.println(item2.getKey());
-			System.out.println(item2.getValue());
+			//System.out.println(item2.getKey());
+			//System.out.println(item2.getValue());
 		}
 		Collection<Integer> values = map.values();
-		System.out.println(values);
+		//System.out.println(values);
 	}
 
 }

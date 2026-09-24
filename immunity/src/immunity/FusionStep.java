@@ -55,7 +55,7 @@ public class FusionStep {
 		int gridSize = (int) Math.round(endosome.size*Cell.orgScale / 15d);
 		GridCellNgh<Endosome> nghCreator = new GridCellNgh<Endosome>(grid, pt,
 				Endosome.class, gridSize, gridSize);
-		// System.out.println("SIZE           "+gridSize);
+		// //System.out.println("SIZE           "+gridSize);
 
 		List<GridCell<Endosome>> cellList = nghCreator.getNeighborhood(true);
 		List<Endosome> endosomes_to_delete = new ArrayList<Endosome>();
@@ -66,7 +66,7 @@ public class FusionStep {
 						&& (EndosomeAssessCompatibility.compatibles(endosome, end))) {
 					endosomes_to_delete.add(end);
 				}
-				// System.out.println(endosomes_to_delete);
+				// //System.out.println(endosomes_to_delete);
 			}
 		}
 		for (Endosome endosome2 : endosomes_to_delete) {
@@ -75,7 +75,7 @@ public class FusionStep {
 			endosome.volume = endosome.volume + endosome2.volume;
 			endosome.area = endosome.area + endosome2.area;
 			//initOrgProp.put("area", area);
-			// System.out.println(endosome.area+"  AREAS FINAL");
+			// //System.out.println(endosome.area+"  AREAS FINAL");
 			endosome.rabContent = sumRabContent(endosome, endosome2);
 			endosome.membraneContent = sumMembraneContent(endosome, endosome2);
 			endosome.solubleContent = sumSolubleContent(endosome, endosome2);
@@ -101,7 +101,7 @@ public class FusionStep {
 		int gridSize = (int) Math.round(endosome.size*Cell.orgScale / 15d);
 		GridCellNgh<Endosome> nghCreator = new GridCellNgh<Endosome>(grid, pt,
 				Endosome.class, gridSize, gridSize);
-		// System.out.println("SIZE           "+gridSize);
+		// //System.out.println("SIZE           "+gridSize);
 
 		List<GridCell<Endosome>> cellList = nghCreator.getNeighborhood(true);
 		List<Endosome> endosomes_to_delete = new ArrayList<Endosome>();
@@ -135,7 +135,7 @@ public class FusionStep {
 			endosome.volume = endosome.volume + endosome2.volume;
 			endosome.area = endosome.area + endosome2.area;
 			//initOrgProp.put("area", area);
-			// System.out.println(endosome.area+"  AREAS FINAL");
+			// //System.out.println(endosome.area+"  AREAS FINAL");
 			endosome.rabContent = sumRabContent(endosome, endosome2);
 			endosome.membraneContent = sumMembraneContent(endosome, endosome2);
 			endosome.solubleContent = sumSolubleContent(endosome, endosome2);
@@ -170,7 +170,7 @@ public class FusionStep {
 			}
 		}
 
-		// System.out.println("rabContentSum" + endosome1.rabContent);
+		// //System.out.println("rabContentSum" + endosome1.rabContent);
 		return rabSum;
 	}
 
@@ -213,7 +213,7 @@ public class FusionStep {
 			}
 		}
 
-		// System.out.println("solubleContentSum" + endosome1.solubleContent);
+		// //System.out.println("solubleContentSum" + endosome1.solubleContent);
 		return solSum;
 	}
 	

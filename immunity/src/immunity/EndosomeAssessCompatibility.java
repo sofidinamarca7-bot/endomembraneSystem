@@ -23,8 +23,8 @@ public class EndosomeAssessCompatibility {
 				&& !modelProperties.rabCompatibility.containsKey(rabY + rabX))
 			return 0;
 		if (modelProperties.rabCompatibility.containsKey(rabX + rabY)) {
-			// System.out.println("COMPATIB");
-			// System.out.println(rabCompatibility.get(rabX+rabY));
+			// //System.out.println("COMPATIB");
+			// //System.out.println(rabCompatibility.get(rabX+rabY));
 			return modelProperties.rabCompatibility.get(rabX + rabY);
 
 		} else {

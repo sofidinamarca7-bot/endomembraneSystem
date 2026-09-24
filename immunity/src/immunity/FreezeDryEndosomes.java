@@ -73,9 +73,9 @@ public class FreezeDryEndosomes {
 			case "en":
 			{
 				InitialOrganelles inOr = InitialOrganelles.getInstance();
-//				System.out.println("AQUI PARA b0  "+b[0]);
+//				//System.out.println("AQUI PARA b0  "+b[0]);
 				inOr.getDiffOrganelles().add(b[0]);
-//				System.out.println("AQUI PARA  "+b[1]);
+//				//System.out.println("AQUI PARA  "+b[1]);
 				switch (b[1]) {
 				case "initOrgProp": {
 					HashMap<String, Double> value = new HashMap<String, Double>();
@@ -88,7 +88,7 @@ public class FreezeDryEndosomes {
 				case "initRabContent": {
 					HashMap<String, Double> value = new HashMap<String, Double>();
 					for (int i = 2; i < b.length; i = i + 2) {
-//						System.out.println("AQUI PARA  "+b[i]+" "+ b[i + 1]);
+//						//System.out.println("AQUI PARA  "+b[i]+" "+ b[i + 1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					inOr.getInitRabContent().put(b[0], value);
@@ -108,14 +108,14 @@ public class FreezeDryEndosomes {
 					for (int i = 2; i < b.length; i = i + 2) {
 						if (!ModelProperties.getInstance().getMembraneMet().contains(b[i]))continue;
 
-//						System.out.println("VALOR MALO" + b[i] + "" + b[i+1]);
+//						//System.out.println("VALOR MALO" + b[i] + "" + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					inOr.getInitMembraneContent().put(b[0], value);
 					break;
 				}
 				default: {
-					System.out.println("no a valid entry");
+					//System.out.println("no a valid entry");
 				}
 				}
 				break;
@@ -143,15 +143,15 @@ public class FreezeDryEndosomes {
 					for (int i = 2; i < b.length; i = i + 2) {
 		//				if (!ModelProperties.getInstance().getInitPMmembraneRecycle().containsKey(b[i]))continue;
 		//				if (!ModelProperties.getInstance().getInitPMmembraneRecycle().get(b[i]).equals(0.0))continue;
-//						System.out.println("VALOR MALO PM " + b[i] + " " + b[i+1]);
+//						//System.out.println("VALOR MALO PM " + b[i] + " " + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					PlasmaMembrane.getInstance().getMembraneRecycle().putAll(value);
-					System.out.println("VALORes " + PlasmaMembrane.getInstance().getMembraneRecycle());
+					//System.out.println("VALORes " + PlasmaMembrane.getInstance().getMembraneRecycle());
 					break;
 				}
 				default: {
-					System.out.println("no a valid entry");
+					//System.out.println("no a valid entry");
 				}
 				}
 				break;
@@ -170,7 +170,7 @@ public class FreezeDryEndosomes {
 						if (!ModelProperties.getInstance().getInitERsolubleRecycle().containsKey(b[i]))continue;
 						if (!ModelProperties.getInstance().getInitERsolubleRecycle().get(b[i]).equals(0.0))continue;
 
-//						System.out.println("VALOR MALO ER " + b[i] + " " + b[i+1]);
+//						//System.out.println("VALOR MALO ER " + b[i] + " " + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					EndoplasmicReticulum.getInstance().getSolubleRecycle().putAll(value);
@@ -182,14 +182,14 @@ public class FreezeDryEndosomes {
 						if (!ModelProperties.getInstance().getInitERmembraneRecycle().containsKey(b[i]))continue;
 						if (!ModelProperties.getInstance().getInitERmembraneRecycle().get(b[i]).equals(0.0))continue;
 
-//						System.out.println("VALOR MALO " + b[i] + " " + b[i+1]);
+//						//System.out.println("VALOR MALO " + b[i] + " " + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					EndoplasmicReticulum.getInstance().getMembraneRecycle().putAll(value);
 					break;
 				}
 				default: {
-					System.out.println("no a valid entry");
+					//System.out.println("no a valid entry");
 				}
 				}
 				break;
@@ -208,7 +208,7 @@ public class FreezeDryEndosomes {
 						if (!ModelProperties.getInstance().getSolubleCell().containsKey(b[i]))continue;
 						if (!ModelProperties.getInstance().getSolubleCell().get(b[i]).equals(0.0))continue;
 
-//						System.out.println("VALOR MALO ER " + b[i] + " " + b[i+1]);
+//						//System.out.println("VALOR MALO ER " + b[i] + " " + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					Cell.getInstance().getSolubleCell().putAll(value);
@@ -220,27 +220,27 @@ public class FreezeDryEndosomes {
 						if (!ModelProperties.getInstance().getMembraneCell().containsKey(b[i]))continue;
 						if (!ModelProperties.getInstance().getMembraneCell().get(b[i]).equals(0.0))continue;
 
-//						System.out.println("VALOR MALO " + b[i] + " " + b[i+1]);
+//						//System.out.println("VALOR MALO " + b[i] + " " + b[i+1]);
 						value.put(b[i], Double.parseDouble(b[i + 1]));
 					}
 					Cell.getInstance().getMembraneCell().putAll(value);
 					break;
 				}
 				default: {
-					System.out.println("no a valid entry");
+					//System.out.println("no a valid entry");
 				}
 				}
 				break;
 			}
 			default: {
-				System.out.println("no a valid entry");
+				//System.out.println("no a valid entry");
 			}
 			}
 
 		}
 		scanner.close();
-//		System.out.println(frozenEndosomes.solubleMet);
-//		System.out.println(frozenEndosomes.tubuleTropism);
+//		//System.out.println(frozenEndosomes.solubleMet);
+//		//System.out.println(frozenEndosomes.tubuleTropism);
 	}
 	
 	
@@ -248,7 +248,7 @@ public class FreezeDryEndosomes {
 	public void writeToCsv() throws IOException {
 		
 		IndexedIterable<Endosome> collection = CellBuilder.getCollection();
-//		System.out.println("ALL ENDOSOMES"+collection);
+//		//System.out.println("ALL ENDOSOMES"+collection);
 		int index = 0;
 		Writer output;	
 	    double tick = RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
@@ -312,7 +312,7 @@ public class FreezeDryEndosomes {
 		public void writeToCsvPM() throws IOException {
 			
 			PlasmaMembrane plasmaMembrane = PlasmaMembrane.getInstance();
-//			System.out.println("ALL ENDOSOMES"+collection);
+//			//System.out.println("ALL ENDOSOMES"+collection);
 			Writer output;	
 //		    double tick = RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 //			String line ="tick " + tick + "\n";
@@ -370,7 +370,7 @@ public class FreezeDryEndosomes {
 		public void writeToCsvER() throws IOException {
 			
 			EndoplasmicReticulum endoplasmicReticulum = EndoplasmicReticulum.getInstance();
-//			System.out.println("ALL ENDOSOMES"+collection);
+//			//System.out.println("ALL ENDOSOMES"+collection);
 			Writer output;	
 //		    double tick = RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 //			String line ="tick " + tick + "\n";

@@ -41,16 +41,16 @@ public class EndosomeUptakeStepTest {
 	@Test
 	public void testUptake() {
 //		ISchedule schedule = RunEnvironment.getInstance().getCurrentSchedule ();
-//		System.out.println("TEST  ADENTRO test 1 TEST  "+endosome.area);
+//		//System.out.println("TEST  ADENTRO test 1 TEST  "+endosome.area);
 		// this.endosome....
 		Cell.getInstance().rabCell.put("RabA", 1d);
 		Cell.getInstance().settMembrane(10d*45026.548);
 		for (int i = 0; i<5; i++){
 
-			System.out.println("\nTEST   antes t "+ Cell.getInstance().tMembrane + " cellrabs "+Cell.getInstance().rabCell);
+			//System.out.println("\nTEST   antes t "+ Cell.getInstance().tMembrane + " cellrabs "+Cell.getInstance().rabCell);
 			EndosomeUptakeStep.uptake(this.endosome);
-			System.out.println("TEST   despues "+ Cell.getInstance().tMembrane + " cellrabs "+Cell.getInstance().rabCell);
-//			System.out.println("Content "+.membraneContent);
+			//System.out.println("TEST   despues "+ Cell.getInstance().tMembrane + " cellrabs "+Cell.getInstance().rabCell);
+//			//System.out.println("Content "+.membraneContent);
 			
 			//		assertSame(this.endosome.solubleContent, this.endosome.solubleContent);
 	//		assertNotSame(initial, this.endosome.solubleContent);
